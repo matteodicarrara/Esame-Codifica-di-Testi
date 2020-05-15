@@ -1,0 +1,310 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!--
+    Author: Mattia Filosa & Matteo Sarzanini
+    Date: 2020 May 15
+    Title: Codifica lettera LL1.29 esame
+    <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?
+-->
+<!DOCTYPE TEI SYSTEM "tei_all.dtd">
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Vincenzo Bellini a Pietro Ponzani, in Puteaux, 30 maggio 1835</title>
+				<!--formato titolo: mittente a destinatario, in luogo, data di scrittura della lettera -->
+				<author ref="TEI-ListPerson.xml#VB">Vincenzo Bellini</author>
+				<respStmt>
+					<resp>transcription by</resp>
+					<name ref="#GS">Graziella Seminara</name>
+				</respStmt>
+			</titleStmt>
+			
+            <editionStmt>
+				<edition>Digital Edition
+					<date when="2018-06">June 2018</date>
+				</edition>
+				<respStmt>
+					<resp>Digital edition project coordineted by</resp>
+					<name ref="#AMDG">Angelo Mario Del Grosso</name>
+					<name ref="#DS">Daria Spampinato</name>
+				</respStmt>
+				<respStmt>
+					<resp>Encoding by</resp>
+					<name ref="#MF">Mattia Filosa</name>
+					<name ref="#MS">Matteo Sarzanini</name>
+				</respStmt>
+			</editionStmt>
+
+            <publicationStmt>
+				<publisher>Fondazione Bellini</publisher>
+                <availability>
+					<licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</licence>
+				</availability>
+                <idno type="url">http://http://www.studibelliniani.eu/</idno>
+                <!---                                            CHIEDERE URGENTEMENTE AL PROF                                                     <date when="yyyyyy" /> va indicato l'uri dell'edizione digitale delle lettere                                    DA VEDERE-->
+			</publicationStmt>
+
+            <sourceDesc>
+				<bibl source="TEI-ListBibl.xml#Seminara2017" resp="#GS" ana="442/2">
+							<citedRange unit="page" from="512" to="512">512</citedRange>
+				</bibl>
+				<msDesc>
+					
+                    <msIdentifier>
+						<country>Italy</country>
+						<settlement>Catania</settlement>
+						<repository role="museum" ref="http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436" n="I-CATm">Museo Belliniano Catania</repository>
+						<!-- riferimento al catalogo delle sigle dei musei in cui è definito I-CATm -->
+						<!-- mettere come secondo valore di ref del tag repository l'URI del nodo museo del dataset del Belliniano -->
+						<idno type="inventory">LL1.29</idno>						<!-- segnatura della singola lettera -->
+						<altIdentifier><idno type="collocation">in esposizione Casa Natale, sala B, vetrina 5, ripiano 2, IV</idno></altIdentifier>
+						<!-- collocazione della lettera al museo -->
+					</msIdentifier>
+
+                    <msContents>
+						<msItem>
+							<author xml:lang="it" ref="TEI-ListPerson.xml#VB">Vincenzo Bellini</author>
+							
+                            <title type="uniform" xml:lang="it">
+								<persName ref="TEI-ListPerson.xml#VB" role="composer">Vincenzo Bellini</persName>a
+                                <persName ref="TEI-ListPerson.xml#PP" role="lawyer">Pietro Ponzani</persName>, in
+                                <placeName ref="TEI-ListPlace.xml#Put">Puteaux</placeName>,								
+                                <date when="1835-05-30">30 maggio 1835</date>
+							</title>
+							
+                            <textLang mainLang="it" otherLangs="fr">italiano di inizio Ottocento con indirizzo in francese</textLang>
+						</msItem>
+					</msContents>
+                    
+                    <physDesc>
+						<objectDesc>
+							<supportDesc>
+
+								<support>
+									<material>Carta sottile.</material>
+									<watermark>
+										<!-- info sulla filigrana: se c'è viene descritta in linguaggio naturale (es. forma della filigrana [circolare, lineare], la scuola di appartenenza -->
+									</watermark>
+									<stamp> Non sono presenti nè francobolli nè timbri in ognuna delle pagine.
+					 						<!-- E' la descrizione in linguaggio naturale dei francobolli e dei timbri  -->
+									</stamp>
+									<p>Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti e con testo solo nel fronte e verso bianco. 
+                                        Carta sottile senza filigrana, colore beige, inchiostro nero. Il fronte presenta un segno non ben identificato d'inchiostro	nero
+                                        che va a coprire parti scritte non complicandone tuttavia la lettura, inoltre è presente un'annotazione dell'autore nel margine 
+                                        sinistro del fronte recto; il retro del folio presenta una scritta ed un numero d'inchiostro blu. 
+										Infine è presente un timbro illeggibile sul recto verso, ma potenzialmente classificabile come timbro di arrivo della missiva.
+										Sono presenti delle macchie d'inchiostro nel fronte verso e nel retro verso.
+                                        <!-- descrizione fisica della lettera -->
+									</p>
+								</support>
+                                
+                                <extent>
+									<measure type="folio">1</measure>				<!--  va inserita la quantità dell'oggetto, indicando in type il tipo descritto -->
+									<dimensions unit="mm">
+										<height>134</height>
+										<width>204</width>
+									</dimensions>
+								</extent>
+								
+                                <foliation>		<!-- es. folio verso a sx, folio recto a dx con suddivisioni ulteriori. -->
+									Il fronte è piegato in recto (a dx) e verso (a sx). Il folio presenta una duplice piegatura asimmetrica, con il margine inferiore piegato più ampio. 
+								</foliation>
+								
+                                <condition>
+									<!-- descrizione delle condizioni fisiche di conservazione della lettera -->
+									<p>Lettera in buone condizioni fisiche.</p>
+								</condition>
+                            </supportDesc>
+                        </objectDesc>
+                        
+                        <handDesc hands="2">
+							<handNote>
+                            <p>Scrittura a mano libera leggibile. Il folio fronte, nel verso superiore presenta un'annotazione probabilmente dell'autore.
+							</p>
+                            </handNote>
+							<handNote xml:id="h2">								<!-- indica la seconda mano del catalogatore -->
+								<p>Una annotazione è probabilmente dovuta ad un catalogatore e presenta il numero 5 e un'ulteriore annotazione difficilmente leggibile.
+								</p>
+							</handNote>
+						</handDesc>
+						<sealDesc>							<!-- inserire eventuali sigilli presenti -->
+							<seal>
+								<p>Il margine superiore del recto verso presenta l'ombra di un timbro completamente illeggibile.</p>
+							</seal>
+						</sealDesc>
+                    </physDesc>
+                    
+                    <additional>
+						<adminInfo>
+							<note>		<!-- descrizione del significato della segnatura della lettera -->
+								All'interno del carteggio belliniano (LL), la segnatura LL1.29 identifica la ventinovesima lettera in ordine cronologico del primo sottogruppo, 
+                                che corrisponde all'epistolario di Vincenzo Bellini.
+								<!-- Note aggiuntive non strutturabili con altri tag TEI -->
+							</note>
+						</adminInfo>
+					</additional>
+
+                </msDesc>    
+            </sourceDesc>
+        </fileDesc>
+
+        <profileDesc>
+			<correspDesc>
+				<correspAction type="sent">
+					<persName ref="TEI-ListPerson.xml#VB" role="composer">Vincenzo Bellini</persName>
+					<placeName ref="TEI-ListPlace.xml#NSS">Neuilly-sur-Seine</placeName>
+					<date when="1835-05-30">30 maggio 1835</date>
+				</correspAction>
+				<correspContext>
+					<p>non è presente un contesto di riferimento</p>
+				</correspContext>
+			</correspDesc>
+
+			<textClass>
+				<keywords scheme="http://thes.bncf.firenze.sbn.it">		<!--                                                                                                   DA VEDERE                -->	
+					<term resp="#GS"> lettera 					
+					</term>
+				</keywords>
+			</textClass>
+			<langUsage>
+				<language ident="it">italiano di inizio Ottocento</language>
+				<language ident="fr">francese</language>
+			</langUsage>
+		</profileDesc>
+
+    </teiHeader>
+                                                                        <!--IN ATTESA DI SPIEGAZIONE -->
+    <facsimile>
+		<surface n="1" xml:id="LL1.29_folio_1fr">			<!-- FRONTE RECTO -->
+            <graphic url='LL1.29_0001.jpg' width='1645px' height='2475px' />
+			<!--Annotazione a margine sinistro-->
+			<zone ulx="66" uly="512" lrx="212" lry="721" rendition="Line" xml:id="LL1.29_line_1fr_00"/>
+			<!--Intestazione lettera-->
+            <zone ulx="374" uly="130" lrx="1604" lry="185" rendition="Line" xml:id="LL1.29_line_1fr_01"/>
+			<zone ulx="489" uly="232" lrx="1505" lry="287" rendition="Line" xml:id="LL1.29_line_1fr_02"/>
+			<!--Corpo centrale della lettera-->
+            <zone ulx="255" uly="299" lrx="888" lry="384"  rendition="Line" xml:id="LL1.29_line_1fr_03"/>
+            <zone ulx="654" uly="405" lrx="1623" lry="468" rendition="Line" xml:id="LL1.29_line_1fr_04"/>
+            <zone ulx="215" uly="502" lrx="1602" lry="571" rendition="Line" xml:id="LL1.29_line_1fr_05"/>
+            <zone ulx="222" uly="595" lrx="1628" lry="677" rendition="Line" xml:id="LL1.29_line_1fr_06"/>
+            <zone ulx="224" uly="695" lrx="1568" lry="766" rendition="Line" xml:id="LL1.29_line_1fr_07"/>
+            <zone ulx="234" uly="794" lrx="1571" lry="854" rendition="Line" xml:id="LL1.29_line_1fr_08"/>
+            <zone ulx="237" uly="876" lrx="1625" lry="968" rendition="Line" xml:id="LL1.29_line_1fr_09"/>
+            <zone ulx="227" uly="983" lrx="1619" lry="1055" rendition="Line" xml:id="LL1.29_line_1fr_10"/>
+            <zone ulx="228" uly="1074" lrx="1595" lry="1184" rendition="Line" xml:id="LL1.29_line_1fr_11"/>
+            <zone ulx="233" uly="1170" lrx="1584" lry="1263" rendition="Line" xml:id="LL1.29_line_1fr_12"/>
+            <zone ulx="233" uly="1170" lrx="1584" lry="1263" rendition="Line" xml:id="LL1.29_line_1fr_13"/>
+            <zone ulx="236" uly="1263" lrx="1623" lry="1353" rendition="Line" xml:id="LL1.29_line_1fr_14"/>
+            <zone ulx="237" uly="1355" lrx="1625" lry="1448" rendition="Line" xml:id="LL1.29_line_1fr_15"/>
+            <zone ulx="240" uly="1448" lrx="1617" lry="1536" rendition="Line" xml:id="LL1.29_line_1fr_16"/>
+            <zone ulx="242" uly="1534" lrx="1580" lry="1630" rendition="Line" xml:id="LL1.29_line_1fr_17"/>
+            <zone ulx="243" uly="1634" lrx="1617" lry="1733" rendition="Line" xml:id="LL1.29_line_1fr_18"/>
+            <zone ulx="275" uly="1735" lrx="1586" lry="1835" rendition="Line" xml:id="LL1.29_line_1fr_19"/>
+            <zone ulx="260" uly="1837" lrx="1500" lry="1931" rendition="Line" xml:id="LL1.29_line_1fr_20"/>
+            <zone ulx="264" uly="1928" lrx="1494" lry="1999" rendition="Line" xml:id="LL1.29_line_1fr_21"/>
+            <zone ulx="260" uly="2026" lrx="1593" lry="2137" rendition="Line" xml:id="LL1.29_line_1fr_22"/>
+            <zone ulx="261" uly="2132" lrx="1596" lry="2216" rendition="Line" xml:id="LL1.29_line_1fr_23"/>
+            <zone ulx="264" uly="2215" lrx="1608" lry="2309" rendition="Line" xml:id="LL1.29_line_1fr_24"/>
+            <zone ulx="261" uly="2317" lrx="1551" lry="2405" rendition="Line" xml:id="LL1.29_line_1fr_25"/>
+        </surface>
+
+		<surface n="2" xml:id="LL1.29_folio_1rr">			<!-- RETRO RECTO -->
+			<graphic url='LL1.29_0002.jpg' width='1685px' height='2482px' />
+            <zone ulx="137" uly="115" lrx="1601" lry="196" rendition="Line" xml:id="LL1.29_line_1rr_01"/>
+            <zone ulx="123" uly="206" lrx="1614" lry="280" rendition="Line" xml:id="LL1.29_line_1rr_02"/>
+            <zone ulx="120" uly="311" lrx="1614" lry="389" rendition="Line" xml:id="LL1.29_line_1rr_03"/>
+            <zone ulx="102" uly="404" lrx="1629" lry="487" rendition="Line" xml:id="LL1.29_line_1rr_04"/>
+		</surface>
+
+		<surface n="3" xml:id="LL1.29_folio_1rv">			<!-- RETRO VERSO -->
+			<graphic url='LL1.29_0003.jpg' width='1645px' height='2475px'/>
+			<!--Timbro-->
+			<zone ulx="75" uly="75" lrx="272" lry="240" rendition="Line" xml:id="LL1.29_line_1rv_01"/>
+		</surface>
+
+		<surface n="4" xml:id="LL1.29_folio_1fv">			<!-- FRONTE VERSO -->
+		    <graphic url='LL1.29_0004.jpg' width='1685px' height='2482px' />
+            <!--Numero annotazione-->
+            <zone ulx="239" uly="1463" lrx="449" lry="1673" rendition="Line" xml:id="LL1.29_line_1fv_01" />
+            <!--Scritta annotazione-->
+            <zone ulx="1146" uly="1641" lrx="1410" lry="2072" rendition="Line" xml:id="LL1.29_line_1fv_02" />
+		</surface>
+	</facsimile> 
+
+    <text type="letter" xml:id="LL1.29" subtype="manuscript" n="LL1.29">
+		<front> <!--FRONTE RECTO-->
+			<pb n="1" xml:id="LL1.29_fol_1fr_front" facs="#LL1.29_folio_1fr"/>
+			<div type="envelope">			
+			
+				<div type="sent"> 	
+					<ab>			
+						<mentioned>
+							<placeName ref="TEI-ListPlace.xml#NSS">NEUILLY - SUR - SEINE</placeName>
+							<date when="1835-05-30"> 30 maggio 1835 </date>
+						</mentioned>
+					</ab>
+				</div>
+				
+				<div type="destination">
+					<ab xml:id="LL1.29_hs_1fv_01" facs="#LL1.29_line_1rv_01">					
+						<stamp type="postmark">					<!-- timbro del destinatario con data -->
+							<placeName>
+								<gap reason="illegible"/>
+							</placeName>
+							<mentioned>
+								<date> 
+									<gap reason="illegible"/>
+								</date>
+							</mentioned>
+						</stamp>
+					</ab>
+				</div>
+			
+			</div>
+		</front>
+
+		<body xml:lang="it">
+			<div type="fronte-recto">
+				<pb n="1" xml:id="LL1.29_fol_1fr" facs="#LL1.29_folio_1fr"/>
+				<div type="opener" n="o_01">
+  					<s type="sentence" n="s_01">
+						<lb xml:id="LL1.29_lb_1fr_01" n="1" facs="#LL1.29_line_1fr_01"/>
+						<address>
+							<addrLine>
+						    	<placeName>Rampe de pont</placeName><placeName ref = "TEI-ListPlace.xml#NSS">de Neully</placeName>
+								<placeName>N:19 bis</placeName>
+							</addrLine>
+							<lb xml:id="LL1.29_lb_1fr_02" n="2" facs="#LL1.16_line_1fr_02"/>
+								<addrLine>
+								<hi rend="underline align(right)">
+									<placeName ref = "TEI-ListPlace.xml#Paris">près de Paris</placeName>
+									<placeName ref="TEI-ListPlace.xml#PUT">à Puteau</placeName>
+							  	</hi>
+							</addrLine>
+						</address>
+					</s>
+				</div>
+				
+				<div type="letter-body" n="t_01"> 
+					<salute  n="ab_02">
+						<s type="sentence" n="s_02">
+							<lb xml:id="LL1.29_lb_1fr_03" n="3" facs="#LL1.29_line_1fr_03"/>
+							<hi rend="align(left)">Mio caro
+									<persName ref="TEI-ListPerson.xml#PP" role="lawyer">Ponzani</persName>
+									<ptr target="#LL1_29_note1"/>
+
+									<!--SIAMO ARRIVATI QUA-->
+							</hi>
+						</s>
+					</salute>				
+				</div>
+			</div>
+		</body>
+
+		<back>
+		</back>
+
+    </text>
+
+</TEI>

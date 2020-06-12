@@ -13,7 +13,7 @@
 			<titleStmt>
 				<title>Vincenzo Bellini a Pietro Ponzani, in Puteaux, 30 maggio 1835</title>
 				<!--formato titolo: mittente a destinatario, in luogo, data di scrittura della lettera -->
-				<author ref="TEI-ListPerson.xml#VB">Vincenzo Bellini</author>
+				<author ref="#VB">Vincenzo Bellini</author>
 				<respStmt>
 					<resp>transcription by</resp>
 					<name ref="#GS">Graziella Seminara</name>
@@ -41,12 +41,156 @@
                 <availability>
 					<licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</licence>
 				</availability>
-                <idno type="url">http://http://www.studibelliniani.eu/</idno>
-                <!---                                            CHIEDERE URGENTEMENTE AL PROF                                                     <date when="yyyyyy" /> va indicato l'uri dell'edizione digitale delle lettere                                    DA VEDERE-->
+                <idno type="http://http://www.studibelliniani.eu/"></idno>
+
 			</publicationStmt>
 
             <sourceDesc>
-				<bibl source="TEI-ListBibl.xml#Seminara2017" resp="#GS" ana="442/2">
+				<listPerson>
+					<person xml:id="VB" sameAs="http://viaf.org/viaf/39560983"> 
+         	 			<persName role="composer"> <!-- esempi: composer, librettist, tenore, editor, ...-->
+							<ref target="http://data.rism.info/id/rismauthorities/pe11648 http://www.treccani.it/enciclopedia/vincenzo-bellini_(Dizionario-Biografico)"/>
+							<forename>Vincenzo</forename>
+							<forename>Salvatore</forename>
+							<forename>Carmelo</forename>
+							<forename>Francesco </forename> 
+							<surname>Bellini</surname>
+							<addName type="alias">Il Cigno</addName>
+							<roleName type="honorific">Cavaliere della Legione d'onore</roleName> 
+           				 </persName>
+            			<sex>M </sex>
+						<birth><date when="1801-11-03">3 novembre 1801</date>
+							<placeName ref="#CT">
+								<settlement type="municipality">Catania</settlement>
+								<settlement type="provincia" key="CT">Catania</settlement>
+								<country key="IT">Italia</country>
+							</placeName>
+						</birth>
+						<death>
+							<date when="1835-09-23">23 settembre 1835</date>
+							<placeName ref="#Put">
+								<settlement type="municipality">Puteaux</settlement>
+								<settlement type="department" key="Paris">Paris</settlement>
+								<country key="FR">France</country>
+							</placeName>
+						</death>
+						<note><!--  note da creare con l'indicazione di dove e' vissuto durante quali periodi  -->
+						</note>          		
+          			</person>
+
+					<person xml:id="GBa">
+						<persName role="lord">  
+							<ref target="https://www.digitalarchivioricordi.com/it/people/display/20035/Giacomo_Barb__"/>
+							<forename>Giacomo</forename>
+							<surname>Barbò</surname>
+						</persName>
+						<sex>M </sex>
+						<birth>
+							<date when="1786">1786</date>
+						</birth>
+						<death>
+							<date when="1849">1849</date>
+						</death>
+         	 		</person>
+
+					<person xml:id = "PP">
+						<persName role = "lawyer">
+							<forename>Pietro</forename>
+							<surname>Ponzani</surname>
+						</persName>	
+						<sex>M </sex>
+						<birth>
+							<placeName ref = "Nov">Novara</placeName>
+							<date when = "1780">1780</date>
+						</birth>
+						<death>
+							<date when = "1860">1860</date>
+						</death>
+					</person>
+
+
+					<person xml:id = "LS">
+						<persName>
+							<forename>Levy</forename>
+							<surname>Solomon</surname>
+						</persName>	
+						<sex>M </sex>
+						<birth>
+							<date>Unknown</date>
+						</birth>
+						<death>
+							<date>Unknown</date>
+						</death>
+					</person>
+				</listPerson>
+
+				<listPlace>
+					<place xml:id="CT">
+                        <placeName ref="http://www.geonames.org/2525068/catania.html http://www.treccani.it/enciclopedia/catania/">Catania</placeName>
+                        <country key="IT">Italia</country>
+                        <note></note>
+                    </place>
+
+					<place xml:id="London">
+                        <placeName ref="http://www.geonames.org/2643743 http://www.treccani.it/enciclopedia/london/">London</placeName>
+                        <country key="GB">Great Britain</country>
+                        <note></note>
+                    </place>
+					
+					 <place xml:id="MI">
+                        <placeName ref="http://www.geonames.org/3173435 http://www.treccani.it/enciclopedia/milano/">Milano</placeName>
+                        <country key="IT">Italia</country>
+                        <note></note>
+                    </place>
+
+					<place xml:id="NSS">
+                        <placeName ref="http://www.geonames.org/2990611 http://www.treccani.it/enciclopedia/ricerca/Neuilly-sur-Seine/">Neuilly-sur-Seine</placeName>
+                        <district type="arrondissement">Nanterre</district>
+                        <settlement type="city">Paris</settlement>
+                        <country key="FR">France</country>
+                        <note></note>
+                    </place>
+
+					<place xml:id="Paris">
+                        <placeName ref="http://www.geonames.org/2988507 http://www.treccani.it/enciclopedia/parigi/">Paris</placeName>
+                        <country key="FR">France</country>
+                        <note></note>
+                    </place>
+
+					<place xml:id="Put">
+                         <placeName ref="http://www.geonames.org/2985034 http://www.treccani.it/enciclopedia/puteaux_(Enciclopedia-Italiana)">Puteaux</placeName>
+                         <district type="arrondissement">Nanterre</district>
+                         <settlement type="city">Paris</settlement>
+                         <country key="FR">France</country>
+                         <note source="#Seminara2017" resp="#GS" ana="580">
+                        	  <bibl>
+                        	  	  <citedRange unit="page" from="346" to="346">346</citedRange>
+                        	  </bibl>
+                        	  <p>Puteaux era un sobborgo di <placeName ref="#Paris">Parigi</placeName>, immerso nel verde e situato sulla <foreign xml:lang="fr">rive gauche</foreign> della Senna. Qui Bellini si stabilì dal 26 maggio al 1° novembre 1834 e di nuovo nel 1835 dall'11 maggio al 23 settembre (giorno della morte) nella residenza di Solomon Levy (o Lewis), un facoltoso ebreo inglese che verosimilmente aveva conosciuto nel 1830 a Milano. Levy, che negli anni 1834-35 si trattenne stabilmente a Parigi, apparteneva alla cerchia delle più ristrette frequentazioni francesi del musicista; risiedeva in un lussuoso appartamento in Boulevard des Capucines, ma possedeva anche la residenza di Puteaux.
+														</p>                        											
+                        	</note>
+                    </place>
+
+					<place xml:id = "Nov">
+						<placeName ref = "http://www.treccani.it/enciclopedia/novara/">Novara</placeName>
+						<country key = "IT">Italy</country>
+						<note>Luogo dove è nato Pietro Ponzani.</note>
+					</place>
+
+				</listPlace>
+
+				<listOrg>
+					<org type="theatre" xml:id="Opera">
+                        <orgName type="main" ref="https://it.wikipedia.org/wiki/Op%C3%A9ra_national_de_Paris">Grand Opéra</orgName>
+                        <orgName>Opéra national de Paris</orgName>
+                   	 	<placeName ref="#Paris">Paris</placeName>
+                        <desc>
+                          
+                        </desc>
+                    </org> 
+				</listOrg>
+
+				<bibl source="#Seminara2017" resp="#GS" ana="442/2">
 							<citedRange unit="page" from="512" to="512">512</citedRange>
 				</bibl>
 				<msDesc>
@@ -57,20 +201,19 @@
 						<repository role="museum" ref="http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436" n="I-CATm">Museo Belliniano Catania</repository>
 						<!-- riferimento al catalogo delle sigle dei musei in cui è definito I-CATm -->
 						<!-- mettere come secondo valore di ref del tag repository l'URI del nodo museo del dataset del Belliniano -->
-						<idno type="inventory">LL1.29</idno>						<!-- segnatura della singola lettera -->
+						<idno xml:id = "codiceL" type="inventory">LL1.29</idno>						<!-- segnatura della singola lettera -->
 						<altIdentifier><idno type="collocation">in esposizione Casa Natale, sala B, vetrina 5, ripiano 2, IV</idno></altIdentifier>
 						<!-- collocazione della lettera al museo -->
 					</msIdentifier>
 
                     <msContents>
 						<msItem>
-							<author xml:lang="it" ref="TEI-ListPerson.xml#VB">Vincenzo Bellini</author>
-							
+							<author xml:id = "mittLett" xml:lang="it" ref="#VB">Vincenzo Bellini</author>
                             <title type="uniform" xml:lang="it">
-								<persName ref="TEI-ListPerson.xml#VB" role="composer">Vincenzo Bellini</persName>a
-                                <persName ref="TEI-ListPerson.xml#PP" role="lawyer">Pietro Ponzani</persName>, in
-                                <placeName ref="TEI-ListPlace.xml#Put">Puteaux</placeName>,								
-                                <date when="1835-05-30">30 maggio 1835</date>
+								<persName ref="#VB" role="composer">Vincenzo Bellini</persName>a
+                                <persName ref="#PP" role="lawyer">Pietro Ponzani</persName>, in
+                                <placeName xml:id = "luogPrinc" ref="#Put">Puteaux</placeName>,								
+                                <date xml:id = "datPrinc" when="1835-05-30">30 maggio 1835</date>
 							</title>
 							
                             <textLang mainLang="it" otherLangs="fr">italiano di inizio Ottocento con indirizzo in francese</textLang>
@@ -86,10 +229,11 @@
 									<watermark>
 										<!-- info sulla filigrana: se c'è viene descritta in linguaggio naturale (es. forma della filigrana [circolare, lineare], la scuola di appartenenza -->
 									</watermark>
-									<stamp> Non sono presenti nè francobolli nè timbri in ognuna delle pagine.
+									<stamp> Non sono presenti francobolli, ma alla terza pagina è presente un timbro probabilmente riferibile
+											all'arrivo della lettera.
 					 						<!-- E' la descrizione in linguaggio naturale dei francobolli e dei timbri  -->
 									</stamp>
-									<p>Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti e con testo solo nel fronte e verso bianco. 
+									<p xml:id = "descLet">Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti e con testo solo nel fronte e verso bianco. 
                                         Carta sottile senza filigrana, colore beige, inchiostro nero. Il fronte presenta un segno non ben identificato d'inchiostro	nero
                                         che va a coprire parti scritte non complicandone tuttavia la lettura, inoltre è presente un'annotazione dell'autore nel margine 
                                         sinistro del fronte recto; il retro del folio presenta una scritta ed un numero d'inchiostro blu. 
@@ -152,12 +296,12 @@
         <profileDesc>
 			<correspDesc>
 				<correspAction type="sent">
-					<persName ref="TEI-ListPerson.xml#VB" role="composer">Vincenzo Bellini</persName>
-					<placeName ref="TEI-ListPlace.xml#NSS">Neuilly-sur-Seine</placeName>
+					<persName ref="#VB" role="composer">Vincenzo Bellini</persName>
+					<placeName ref="#NSS">Neuilly-sur-Seine</placeName>
 					<date when="1835-05-30">30 maggio 1835</date>
 				</correspAction>
 				<correspContext>
-					<p>non è presente un contesto di riferimento</p>
+					<p>Non è presente un contesto di riferimento</p>
 				</correspContext>
 			</correspDesc>
 
@@ -174,61 +318,63 @@
 		</profileDesc>
 
     </teiHeader>
-                                                                        <!--IN ATTESA DI SPIEGAZIONE -->
+                                                                        
     <facsimile>
 		<surface n="1" xml:id="LL1.29_folio_1fr">			<!-- FRONTE RECTO -->
-            <graphic url='LL1.29_0001.jpg' width='1645px' height='2475px' />
+            <graphic url='LL1.29_0001.png' width='560.666666px' height='844.666666px' />
 			<!--Annotazione a margine sinistro-->
-			<zone ulx="66" uly="512" lrx="212" lry="721" rendition="Line" xml:id="LL1.29_line_1fr_00"/>
+			<zone ulx="18" uly="167" lrx="74" lry="233" rendition="Line" xml:id="LL1.29_line_1fr_00"/>
+			<!--Segno grafico non identificabile-->
+			<zone ulx="60" uly="220" lrx="77" lry="329" rendition="Line" xml:id="LL1.29_line_1fr_S"/>
 			<!--Intestazione lettera-->	
-			<zone ulx="374" uly="137" lrx="1601" lry="189" rendition="Line" xml:id="LL1.29_line_1fr_01" />
-			<zone ulx="480" uly="222" lrx="1523" lry="284" rendition="Line" xml:id="LL1.29_line_1fr_02"/>
-			<!--Corpo centrale letter-->
-			<zone ulx="255" uly="329" lrx="861" lry="362"  rendition="Line" xml:id="LL1.29_line_1fr_03"/>
-			<zone ulx="674" uly="405" lrx="1607" lry="470" rendition="Line" xml:id="LL1.29_line_1fr_04"/>
-			<zone ulx="212" uly="510" lrx="1587" lry="552" rendition="Line" xml:id="LL1.29_line_1fr_05"/>
-			<zone ulx="218" uly="596" lrx="1617" lry="650" rendition="Line" xml:id="LL1.29_line_1fr_06"/>
-			<zone ulx="222" uly="712" lrx="1568" lry="773" rendition="Line" xml:id="LL1.29_line_1fr_07"/>
-			<zone ulx="234" uly="814" lrx="1562" lry="842" rendition="Line" xml:id="LL1.29_line_1fr_08"/>
-			<zone ulx="231" uly="893" lrx="1620" lry="950" rendition="Line" xml:id="LL1.29_line_1fr_09"/>
-			<zone ulx="216" uly="1001" lrx="1610" lry="1049" rendition="Line" xml:id="LL1.29_line_1fr_10"/>
-			<zone ulx="230" uly="1100" lrx="1511" lry="1139" rendition="Line" xml:id="LL1.29_line_1fr_11"/>
-			<zone ulx="230" uly="1199" lrx="1589" lry="1237" rendition="Line" xml:id="LL1.29_line_1fr_12"/>
-			<zone ulx="243" uly="1289" lrx="1619" lry="1328" rendition="Line" xml:id="LL1.29_line_1fr_13"/>
-			<zone ulx="228" uly="1383" lrx="1619" lry="1431" rendition="Line" xml:id="LL1.29_line_1fr_14"/>
-			<zone ulx="245" uly="1483" lrx="1572" lry="1514" rendition="Line" xml:id="LL1.29_line_1fr_15"/>
-			<zone ulx="239" uly="1577" lrx="1595" lry="1599" rendition="Line" xml:id="LL1.29_line_1fr_16"/>
-			<zone ulx="261" uly="1666" lrx="1610" lry="1696" rendition="Line" xml:id="LL1.29_line_1fr_17"/>
-			<zone ulx="264" uly="1763" lrx="1589" lry="1807" rendition="Line" xml:id="LL1.29_line_1fr_18"/>
-			<zone ulx="257" uly="1862" lrx="1554" lry="1889" rendition="Line" xml:id="LL1.29_line_1fr_19"/>
-			<zone ulx="254" uly="1952" lrx="1493" lry="1984" rendition="Line" xml:id="LL1.29_line_1fr_20"/>
-			<zone ulx="249" uly="2044" lrx="1590" lry="2093" rendition="Line" xml:id="LL1.29_line_1fr_21"/>
-			<zone ulx="269" uly="2132" lrx="1599" lry="2227" rendition="Line" xml:id="LL1.29_line_1fr_22"/>
-			<zone ulx="260" uly="2240" lrx="1589" lry="2275" rendition="Line" xml:id="LL1.29_line_1fr_23"/>
-			<zone ulx="246" uly="2320" lrx="1536" lry="2390" rendition="Line" xml:id="LL1.29_line_1fr_24"/>			
+			<zone ulx="127" uly="39" lrx="551" lry="55" rendition="Line" xml:id="LL1.29_line_1fr_01" />
+			<zone ulx="154" uly="73" lrx="522" lry="94" rendition="Line" xml:id="LL1.29_line_1fr_02"/>
+			<!--Corpo centrale lettera-->
+			<zone ulx="85" uly="108" lrx="291" lry="124" rendition="Line" xml:id="LL1.29_line_1fr_03"/>
+			<zone ulx="232" uly="138" lrx="550" lry="159" rendition="Line" xml:id="LL1.29_line_1fr_04"/>
+			<zone ulx="71" uly="171" lrx="540" lry="187" rendition="Line" xml:id="LL1.29_line_1fr_05"/>
+			<zone ulx="77" uly="202" lrx="546" lry="223" rendition="Line" xml:id="LL1.29_line_1fr_06"/>
+			<zone ulx="79" uly="239" lrx="537" lry="255" rendition="Line" xml:id="LL1.29_line_1fr_07"/>
+			<zone ulx="82" uly="273" lrx="528" lry="287" rendition="Line" xml:id="LL1.29_line_1fr_08"/>
+			<zone ulx="85" uly="305" lrx="553" lry="322" rendition="Line" xml:id="LL1.29_line_1fr_09"/>
+			<zone ulx="70" uly="341" lrx="547" lry="357" rendition="Line" xml:id="LL1.29_line_1fr_10"/>
+			<zone ulx="75" uly="376" lrx="520" lry="385" rendition="Line" xml:id="LL1.29_line_1fr_11"/>
+			<zone ulx="75" uly="403" lrx="537" lry="419" rendition="Line" xml:id="LL1.29_line_1fr_12"/>
+			<zone ulx="81" uly="439" lrx="550" lry="452" rendition="Line" xml:id="LL1.29_line_1fr_13"/>
+			<zone ulx="81" uly="469" lrx="547" lry="489" rendition="Line" xml:id="LL1.29_line_1fr_14"/>
+			<zone ulx="84" uly="500" lrx="541" lry="514" rendition="Line" xml:id="LL1.29_line_1fr_15"/>
+			<zone ulx="82" uly="535" lrx="541" lry="551" rendition="Line" xml:id="LL1.29_line_1fr_16"/>
+			<zone ulx="86" uly="565" lrx="545" lry="581" rendition="Line" xml:id="LL1.29_line_1fr_17"/>
+			<zone ulx="89" uly="600" lrx="540" lry="616" rendition="Line" xml:id="LL1.29_line_1fr_18"/>
+			<zone ulx="86" uly="631" lrx="520" lry="646" rendition="Line" xml:id="LL1.29_line_1fr_19"/>
+			<zone ulx="89" uly="666" lrx="512" lry="677" rendition="Line" xml:id="LL1.29_line_1fr_20"/>
+			<zone ulx="82" uly="704" lrx="545" lry="718" rendition="Line" xml:id="LL1.29_line_1fr_21"/>
+			<zone ulx="84" uly="739" lrx="540" lry="752" rendition="Line" xml:id="LL1.29_line_1fr_22"/>
+			<zone ulx="82" uly="771" lrx="543" lry="778" rendition="Line" xml:id="LL1.29_line_1fr_23"/>
+			<zone ulx="85" uly="801" lrx="528" lry="816" rendition="Line" xml:id="LL1.29_line_1fr_24"/>			
 
         </surface>
 
 		<surface n="2" xml:id="LL1.29_folio_1rr">			<!-- RETRO RECTO -->
-			<graphic url='LL1.29_0002.jpg' width='1685px' height='2482px' />
-            <zone ulx="137" uly="115" lrx="1601" lry="196" rendition="Line" xml:id="LL1.29_line_1rr_01"/>
-            <zone ulx="123" uly="206" lrx="1614" lry="280" rendition="Line" xml:id="LL1.29_line_1rr_02"/>
-            <zone ulx="120" uly="311" lrx="1614" lry="389" rendition="Line" xml:id="LL1.29_line_1rr_03"/>
-            <zone ulx="102" uly="404" lrx="1629" lry="487" rendition="Line" xml:id="LL1.29_line_1rr_04"/>
+			<graphic url='LL1.29_0002.png' width='561px' height='845px' />
+            <zone ulx="42" uly="44" lrx="537" lry="61" rendition="Line" xml:id="LL1.29_line_1rr_01"/>
+            <zone ulx="37" uly="79" lrx="540" lry="95" rendition="Line" xml:id="LL1.29_line_1rr_02"/>
+            <zone ulx="38" uly="112" lrx="538" lry="126" rendition="Line" xml:id="LL1.29_line_1rr_03"/>
+            <zone ulx="30" uly="147" lrx="545" lry="159" rendition="Line" xml:id="LL1.29_line_1rr_04"/>
 		</surface>
 
 		<surface n="3" xml:id="LL1.29_folio_1rv">			<!-- RETRO VERSO -->
-			<graphic url='LL1.29_0003.jpg' width='1645px' height='2475px'/>
+			<graphic url='LL1.29_0003.png' width='561px' height='845px' />
 			<!--Timbro-->
-			<zone ulx="75" uly="75" lrx="272" lry="240" rendition="Line" xml:id="LL1.29_line_1rv_01"/>
+			<zone ulx="30" uly="32" lrx="105" lry="86" rendition="Line" xml:id="LL1.29_line_1rv_01"/>
 		</surface>
 
 		<surface n="4" xml:id="LL1.29_folio_1fv">			<!-- FRONTE VERSO -->
-		    <graphic url='LL1.29_0004.jpg' width='1685px' height='2482px' />
+		    <graphic url='LL1.29_0004.png' width='561px' height='845px' />
             <!--Numero annotazione-->
-            <zone ulx="239" uly="1463" lrx="449" lry="1673" rendition="Line" xml:id="LL1.29_line_1fv_01" />
+            <zone ulx="70" uly="503" lrx="144" lry="567" rendition="Line" xml:id="LL1.29_line_1fv_01" />
             <!--Scritta annotazione-->
-            <zone ulx="1146" uly="1641" lrx="1410" lry="2072" rendition="Line" xml:id="LL1.29_line_1fv_02" />
+            <zone ulx="391" uly="568" lrx="471" lry="708" rendition="Line" xml:id="LL1.29_line_1fv_02" />
 		</surface>
 	</facsimile> 
 
@@ -240,7 +386,7 @@
 				<div type="sent"> 	
 					<ab>			
 						<mentioned>
-							<placeName ref="TEI-ListPlace.xml#NSS">NEUILLY - SUR - SEINE</placeName>
+							<placeName ref="#NSS">NEUILLY - SUR - SEINE</placeName>
 							<date when="1835-05-30"> 30 maggio 1835 </date>
 						</mentioned>
 					</ab>
@@ -273,14 +419,14 @@
 							<lb xml:id="LL1.29_lb_1fr_01" n="1" facs="#LL1.29_line_1fr_01"/>
 							<address>
 								<addrLine>
-									<placeName>Rampe de pont</placeName><placeName ref = "TEI-ListPlace.xml#NSS">de Neully</placeName>
+									<placeName>Rampe de pont</placeName><placeName ref = "#NSS"> de Neully</placeName>
 									<placeName>N:19 bis</placeName>
 								</addrLine>
 								<lb xml:id="LL1.29_lb_1fr_02" n="2" facs="#LL1.29_line_1fr_02"/>
 									<addrLine>
-									<hi rend="underline align(right)">
-										<placeName ref = "TEI-ListPlace.xml#Paris">près de Paris</placeName>
-										<placeName ref="TEI-ListPlace.xml#PUT">à Puteau</placeName>
+									<hi rend="align(right)">
+										<placeName ref = "#Paris">près de Paris</placeName>
+										<placeName ref="#Put">à Puteaux</placeName>
 									</hi>
 								</addrLine>
 							</address>
@@ -292,8 +438,8 @@
 					<salute  n="ab_02">
 						<s type="sentence" n="s_02">
 							<lb xml:id="LL1.29_lb_1fr_03" n="3" facs="#LL1.29_line_1fr_03"/>
-							<hi rend="align(left)">Mio caro
-									<persName ref="TEI-ListPerson.xml#PP" role="lawyer">Ponzani</persName>
+							<hi rend="align(left)" xml:id = "ponzani">Mio caro
+									<persName ref="#PP" role="lawyer">Ponzani</persName>
 									<ptr target="#LL1_29_note1"/>
 							</hi>
 						</s>
@@ -301,20 +447,24 @@
 					<ab type="parag" rend="first_line_indented" n="ab_03">
 						<s type="sentence" n="s_03">
 						<lb xml:id="LL1.29_lb_1fr_04" n="4" facs="#LL1.29_line_1fr_04"/>
-							<persName ref = "TEI-ListPerson.xml#GBa">Barbò</persName>ha dovuto scriverti 
+							<hi rend = "align(right)"><persName ref = "#GBa">Barbò <ptr target="#LL1_29_note2"/></persName> ha dovuto scriverti </hi>
 						<lb xml:id="LL1.29_lb_1fr_05" n="5" facs="#LL1.29_line_1fr_05"/>
-							ch’io avea ricevuto la tua lettera ed
+							<distinct type = "archaic">ch’io avea</distinct> ricevuto la tua lettera ed
+						<!--ANNOTAZIONE A MARGINE-->
+						<unclear unit = "2 lines" facs = "#LL1.29_line_1fr_00"></unclear>
 						<lb xml:id="LL1.29_lb_1fr_06" n="6" facs="#LL1.29_line_1fr_06"/>
-							inviato a <placeName ref = "TEI-ListPlace.xml#London">Londra</placeName> quella per 
-							<persName ref = "TEI-ListPerson.xml#SL">Levy</persName>, ove
+							inviato a <placeName ref = "#London">Londra</placeName> quella per 
+							<persName ref = "#SL">Levy <ptr target="#LL1_29_note3"/></persName>, ove
+						<!--SEGNO A MARGINE-->
+						<add facs = "#LL1.29_line_1fr_S"></add>
 						<lb xml:id="LL1.29_lb_1fr_07" n="7" facs="#LL1.29_line_1fr_07"/>
-							questi si trovava: ora è quà arrivato, 
+							questi si trovava: ora è <choice><sic>quà</sic><corr>qua</corr></choice> arrivato, 
 						<lb xml:id="LL1.29_lb_1fr_08" n="8" facs="#LL1.29_line_1fr_08"/>
 							e mi prega di pagarti il suo debito, 
 						<lb xml:id="LL1.29_lb_1fr_09" n="9" facs="#LL1.29_line_1fr_09"/>
 							del quale non ne comprende la cifra, ed
 						<lb xml:id="LL1.29_lb_1fr_10" n="10" facs="#LL1.29_line_1fr_10"/>
-							infatti non si sà se la tua lettera
+							infatti non si <choice><sic>sà</sic><corr>sa</corr></choice> se la tua lettera
 						<lb xml:id="LL1.29_lb_1fr_11" n="11" facs="#LL1.29_line_1fr_11"/>
 							dica <num>160</num>: o <num>60</num>:<choice><abbr>fi</abbr><expan>f<ex>ranch</ex>i</expan></choice>, quindi ti prego
 						<lb xml:id="LL1.29_lb_1fr_12" n="12" facs="#LL1.29_line_1fr_12"/>
@@ -322,10 +472,10 @@
 						<lb xml:id="LL1.29_lb_1fr_13" n="13" facs="#LL1.29_line_1fr_13"/>
 							che subito te ne farò pagare la somma
 						<lb xml:id="LL1.29_lb_1fr_14" n="14" facs="#LL1.29_line_1fr_14"/>
-							a <placeName ref = "TEI-ListPlace.xml#MI">Milano</placeName>.
+							a <placeName ref = "#MI">Milano</placeName>.
 						</s>						
 						<s type="sentence" n="s_04">
-							<persName ref = "TEI-ListPerson.xml#SL">Levy</persName> mi dice di salutarti
+							<persName ref = "#SL">Levy</persName> mi dice di salutarti
 						<lb xml:id="LL1.29_lb_1fr_15" n="15" facs="#LL1.29_line_1fr_15"/>
 							cara­mente e di dirti che egli stesso
 						<lb xml:id="LL1.29_lb_1fr_16" n="16" facs="#LL1.29_line_1fr_16"/>
@@ -336,12 +486,12 @@
 						<s type="sentence" n="s_04">
 							– Io mi trovo in campagna
 						<lb xml:id="LL1.29_lb_1fr_18" n="18" facs="#LL1.29_line_1fr_18"/>
-							con <persName ref = "TEI-ListPerson.xml#SL">Levy</persName>, ove ci divertiamo 
+							con <persName ref = "#SL">Levy</persName>, ove ci divertiamo 
 						<w>estrema
 						<lb xml:id="LL1.29_lb_1fr_19" n="19" facs="#LL1.29_line_1fr_19" break="no" rend="double stroke"/>
 							mente
 						</w>.
-							Vicino di <placeName ref = "TEI-ListPlace.xml#Paris">Parigi</placeName>, se vogliamo
+							Vicino di <placeName ref = "#Paris">Parigi</placeName>, se vogliamo
 						<lb xml:id="LL1.29_lb_1fr_20" n="20" facs="#LL1.29_line_1fr_20"/>
 							fracassi nei piaceri accorriamo: in 
 						<lb xml:id="LL1.29_lb_1fr_21" n="21" facs="#LL1.29_line_1fr_21"/>
@@ -353,8 +503,8 @@
 							– Delle guerre
 						<lb xml:id="LL1.29_lb_1fr_23" n="23" facs="#LL1.29_line_1fr_23"/>
 							insorte fra i Direttori della 
-							<orgName ref = "TEI-ListOrganization.xml#Opera">
-								<placeName ref = "TEI-ListPlace.xml#Paris">Grand 
+							<orgName ref = "#Opera">
+								<placeName ref = "#Paris">Grand 
 								<w>Opé
 								<lb xml:id="LL1.29_lb_1fr_24" n="24" facs="#LL1.29_line_1fr_24" break="no" rend="double stroke"/>
 								ra
@@ -404,6 +554,14 @@
 			<!--CAMBIO PAGINA-->
 			<div type = "fronte-verso">
 				<pb n="4" xml:id="LL1.29_fol_1fv" facs="#LL1.29_folio_1fv"/>
+				<ab n = "ab_06">
+					<!--ANNOTAZIONE NUMERO-->
+					<add facs = "#LL1.29_line_1fv_01">
+						<num>5</num>
+					</add>
+					<!--ANNOTAZIONE ILLEGGIBILE-->
+					<unclear unit = "4 characters" facs = "#LL1.29_line_1fv_02"></unclear>
+				</ab>
 			</div>
 		</body>
 
@@ -412,8 +570,20 @@
 				<div type="ann_notes">					
 					<note xml:id="LL1_29_note1" resp="#MS">
 						<p> <!--Nota su Pietro Ponzani-->
-							<persName ref="TEI-ListPerson.xml#VB" role="composer">Bellini</persName> si riferiva all'avvocato 
-							<persName ref="TEI-ListPerson.xml#PP" role="lawyer">Pietro Ponzani</persName>.
+							<persName ref="#VB" role="composer">Bellini</persName> si riferiva all'avvocato 
+							<persName ref="#PP" role="lawyer">Pietro Ponzani</persName>.
+						</p>
+					</note>
+					<note xml:id = "LL1_29_note2" resp = "#MF">
+						<p>
+							<persName ref="#VB" role="composer">Bellini</persName> si riferiva al conte
+							<persName ref = "#GBa" role = "lord"> Giacomo Barbò</persName>.
+						</p>
+					</note>
+					<note xml:id = "LL1_29_note3" resp = "#MS">
+						<p>	
+							<persName ref="#VB" role="composer">Bellini</persName> si riferiva a
+							<persName ref = "#LS"> Levy Solomon</persName>.
 						</p>
 					</note>
 				</div>
@@ -441,6 +611,21 @@
 							<citedRange unit="page" from="413" to="413">413</citedRange>
 								
 						</bibl>
+
+						<bibl xml:id="Seminara2001" type="print">
+							<editor xml:id="GS">
+								<forename>Graziella</forename>
+								<surname>Seminara</surname>
+							</editor>
+							<title level="a">Mio caro amico. Per un’edizione critica dell’Epistolario belliniano</title>
+							<title level="m">Comitato Nazionale per le Celebrazioni Belliniane</title>
+								<biblScope unit="volume">XIII</biblScope>
+												<biblScope unit="page" from="24" to="27">24-27</biblScope>
+												<pubPlace>Valverde</pubPlace>
+							<publisher>Il Girasole Edizioni</publisher>
+							<date when="2001">2001</date>
+                    	</bibl>
+
 					</listBibl>
 				</div>
 		</back>

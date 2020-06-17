@@ -20,9 +20,7 @@ function cambiaFoto (x) {
         indiceFoto = 0;   
     } if (indiceFoto < 0) {      
         indiceFoto = numeroFoto -1;   
-    }   
-    nodoFoto.setAttribute("src", galleria[indiceFoto]);
-    nodoFoto.setAttribute("usemap","#"+galleria[indiceFoto]);
+    }  
     switch(indiceFoto){
         case 0:
             for (var i = 0;i<page1.length;i++){
@@ -34,6 +32,9 @@ function cambiaFoto (x) {
             for (var i = 0;i<page4.length;i++){
                 page4[i].setAttribute("hidden","hidden");
             }
+            map4.setAttribute("style","display:none");
+            map2.setAttribute("style","display:none");
+            map1.removeAttribute("style");
         break;
         case 1:
             for (var i = 0;i<page2.length;i++){
@@ -45,6 +46,9 @@ function cambiaFoto (x) {
             for (var i = 0;i<page3.length;i++){
                 page3[i].setAttribute("hidden","hidden");
             }
+            map1.setAttribute("style","display:none");
+            map2.removeAttribute("style");
+            map3.setAttribute("style","display:none");
         break;
         case 2:
             for (var i = 0;i<page3.length;i++){
@@ -56,6 +60,9 @@ function cambiaFoto (x) {
             for (var i = 0;i<page4.length;i++){
                 page4[i].setAttribute("hidden","hidden");
             } 
+            map2.setAttribute("style","display:none");
+            map3.removeAttribute("style");
+            map4.setAttribute("style","display:none");
         break;
         case 3:
             for (var i = 0;i<page4.length;i++){
@@ -67,6 +74,9 @@ function cambiaFoto (x) {
             for (var i = 0;i<page1.length;i++){
                 page1[i].setAttribute("hidden","hidden");
             }
+            map3.setAttribute("style","display:none");
+            map1.setAttribute("style","display:none");
+            map4.removeAttribute("style");
         break;
     }
 }
@@ -83,6 +93,10 @@ var page1;
 var page2;
 var page3;
 var page4;
+var map1;
+var map2;
+var map3;
+var map4;
 var testiInt;
 
 function gestoreLoad () {   
@@ -95,6 +109,10 @@ function gestoreLoad () {
         page3 = document.getElementsByClassName("p3");
         page4 = document.getElementsByClassName("p4");
         testiInt = document.getElementsByClassName("int");
+        map1=document.getElementById("mappa1");
+        map2=document.getElementById("mappa2");
+        map3=document.getElementById("mappa3");
+        map4=document.getElementById("mappa4");
         nodoAvanti.onclick = gestoreClickAvanti;      
         nodoIndietro.onclick = gestoreClickIndietro;      
         numeroFoto = galleria.length;

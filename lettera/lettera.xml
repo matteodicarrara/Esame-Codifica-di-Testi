@@ -87,6 +87,7 @@
 						<sex>M </sex>
 						<birth>
 							<date when="1786">1786</date>
+						
 						</birth>
 						<death>
 							<date when="1849">1849</date>
@@ -109,17 +110,17 @@
 					</person>
 
 
-					<person xml:id = "LS">
+					<person xml:id = "SL">
 						<persName>
 							<forename>Levy</forename>
 							<surname>Solomon</surname>
 						</persName>	
 						<sex>M </sex>
 						<birth>
-							<date>Unknown</date>
+							<date>Sconosciuta</date>
 						</birth>
 						<death>
-							<date>Unknown</date>
+							<date>Sconosciuta</date>
 						</death>
 					</person>
 				</listPerson>
@@ -382,7 +383,6 @@
 		<front> <!--FRONTE RECTO-->
 			<pb n="1" xml:id="LL1.29_fol_1fr_front" facs="#LL1.29_folio_1fr"/>
 			<div type="envelope">			
-			
 				<div type="sent"> 	
 					<ab>			
 						<mentioned>
@@ -419,7 +419,7 @@
 							<lb xml:id="LL1.29_lb_1fr_01" n="1" facs="#LL1.29_line_1fr_01"/>
 							<address>
 								<addrLine>
-									<placeName>Rampe de pont</placeName><placeName ref = "#NSS"> de Neully</placeName>
+									Rampe de pont<placeName ref = "#NSS"> de Neully</placeName>
 									<placeName>N:19 bis</placeName>
 								</addrLine>
 								<lb xml:id="LL1.29_lb_1fr_02" n="2" facs="#LL1.29_line_1fr_02"/>
@@ -436,35 +436,33 @@
 				
 				<div type="letter-body" n="t_01"> 
 					<salute  n="ab_02">
-						<s type="sentence" n="s_02">
+							<s type = "sentence" n= "s_02a" xml:id = "s_02a">
 							<lb xml:id="LL1.29_lb_1fr_03" n="3" facs="#LL1.29_line_1fr_03"/>
-							<hi rend="align(left)" xml:id = "ponzani">Mio caro
-									<persName ref="#PP" role="lawyer">Ponzani</persName>
-									<ptr target="#LL1_29_note1"/>
-							</hi>
-						</s>
+								Mio caro<persName ref="#PP" role="lawyer">Ponzani</persName>
+								<ptr target="#LL1_29_note1"/>
+							</s>
 					</salute>	
 					<ab type="parag" rend="first_line_indented" n="ab_03">
-						<s type="sentence" n="s_03">
+						<s type = "sentence" n= "s_02b" xml:id = "s_02b">
 						<lb xml:id="LL1.29_lb_1fr_04" n="4" facs="#LL1.29_line_1fr_04"/>
-							<hi rend = "align(right)"><persName ref = "#GBa">Barbò <ptr target="#LL1_29_note2"/></persName> ha dovuto scriverti </hi>
+							<persName ref = "#GBa">Barbò <ptr target="#LL1_29_note2"/></persName> ha dovuto scriverti
 						<lb xml:id="LL1.29_lb_1fr_05" n="5" facs="#LL1.29_line_1fr_05"/>
 							<distinct type = "archaic">ch’io avea</distinct> ricevuto la tua lettera ed
 						<!--ANNOTAZIONE A MARGINE-->
-						<unclear unit = "2 lines" facs = "#LL1.29_line_1fr_00"></unclear>
+						<unclear unit = "2 lines" facs = "#LL1.29_line_1fr_S"></unclear>
 						<lb xml:id="LL1.29_lb_1fr_06" n="6" facs="#LL1.29_line_1fr_06"/>
 							inviato a <placeName ref = "#London">Londra</placeName> quella per 
 							<persName ref = "#SL">Levy <ptr target="#LL1_29_note3"/></persName>, ove
 						<!--SEGNO A MARGINE-->
-						<add facs = "#LL1.29_line_1fr_S"></add>
+						<add facs = "#LL1.29_line_1fr_00"></add>
 						<lb xml:id="LL1.29_lb_1fr_07" n="7" facs="#LL1.29_line_1fr_07"/>
-							questi si trovava: ora è <choice><sic>quà</sic><corr>qua</corr></choice> arrivato, 
+							questi si trovava: ora è <choice><orig>quà</orig><reg>qua</reg></choice> arrivato, 
 						<lb xml:id="LL1.29_lb_1fr_08" n="8" facs="#LL1.29_line_1fr_08"/>
 							e mi prega di pagarti il suo debito, 
 						<lb xml:id="LL1.29_lb_1fr_09" n="9" facs="#LL1.29_line_1fr_09"/>
 							del quale non ne comprende la cifra, ed
 						<lb xml:id="LL1.29_lb_1fr_10" n="10" facs="#LL1.29_line_1fr_10"/>
-							infatti non si <choice><sic>sà</sic><corr>sa</corr></choice> se la tua lettera
+							infatti non si <choice><orig>sà</orig><reg>sa</reg></choice> se la tua lettera
 						<lb xml:id="LL1.29_lb_1fr_11" n="11" facs="#LL1.29_line_1fr_11"/>
 							dica <num>160</num>: o <num>60</num>:<choice><abbr>fi</abbr><expan>f<ex>ranch</ex>i</expan></choice>, quindi ti prego
 						<lb xml:id="LL1.29_lb_1fr_12" n="12" facs="#LL1.29_line_1fr_12"/>
@@ -473,8 +471,9 @@
 							che subito te ne farò pagare la somma
 						<lb xml:id="LL1.29_lb_1fr_14" n="14" facs="#LL1.29_line_1fr_14"/>
 							a <placeName ref = "#MI">Milano</placeName>.
-						</s>						
-						<s type="sentence" n="s_04">
+						</s>
+						<join target = "#s_02a #s_02b" scope = "branches" result = "s " type ="sentence"/>				
+						<s type="sentence" n="s_03">
 							<persName ref = "#SL">Levy</persName> mi dice di salutarti
 						<lb xml:id="LL1.29_lb_1fr_15" n="15" facs="#LL1.29_line_1fr_15"/>
 							cara­mente e di dirti che egli stesso
@@ -499,17 +498,16 @@
 						<lb xml:id="LL1.29_lb_1fr_22" n="22" facs="#LL1.29_line_1fr_22"/>
 							nella vita monotona.
 						</s>
-						<s type="sentence" n="s_05">
+						<s type = "sentence" n= "s_05a" xml:id = "s_05a">
 							– Delle guerre
 						<lb xml:id="LL1.29_lb_1fr_23" n="23" facs="#LL1.29_line_1fr_23"/>
 							insorte fra i Direttori della 
 							<orgName ref = "#Opera">
-								<placeName ref = "#Paris">Grand 
+								Grand 
 								<w>Opé
 								<lb xml:id="LL1.29_lb_1fr_24" n="24" facs="#LL1.29_line_1fr_24" break="no" rend="double stroke"/>
 								ra
 								</w>
-							</placeName>
 							</orgName>
 							ed il ministero, fanno che il 
 						</s>
@@ -521,7 +519,7 @@
 				<pb n="2" xml:id="LL1.29_fol_1rr" facs="#LL1.29_folio_1rr"/>
 				<div type="letter-body" n="t_02">
 					<ab type="parag" rend="first_line_indented" n="ab_04">
-						<s type="sentence" n="s_05">
+						<s type = "sentence" n= "s_05b" xml:id = "s_05b">
 						<lb xml:id="LL1.29_lb_1rr_01" n="01" facs="#LL1.29_line_1rr_01"/>
 						    mio contratto non è ancora finito, ed
 						<lb xml:id="LL1.29_lb_1rr_02" n="02" facs="#LL1.29_line_1rr_02"/>
@@ -533,6 +531,7 @@
 							pianate,ed io riapplicarmi e lavorare.
 							</w>
 						</s>
+						<join target = "#s_05a #s_05b" scope = "branches" result = "s " type ="sentence"/>	
 					</ab>			
 				</div>
 			</div>
@@ -583,14 +582,14 @@
 					<note xml:id = "LL1_29_note3" resp = "#MS">
 						<p>	
 							<persName ref="#VB" role="composer">Bellini</persName> si riferiva a
-							<persName ref = "#LS"> Levy Solomon</persName>.
+							<persName ref = "#SL"> Levy Solomon</persName>.
 						</p>
 					</note>
 				</div>
 			</div>
 			<div type="bibliography">
 					<listBibl xml:id="LL1_29_bibliography">
-						<head>Bibliography of the letter LL1.29 </head>
+						
 						<bibl xml:id="LL1_29_Amore" >
 							 	
 							<author>Amore</author>
@@ -614,14 +613,14 @@
 
 						<bibl xml:id="Seminara2001" type="print">
 							<editor xml:id="GS">
-								<forename>Graziella</forename>
+								<forename>Graziella </forename>
 								<surname>Seminara</surname>
 							</editor>
 							<title level="a">Mio caro amico. Per un’edizione critica dell’Epistolario belliniano</title>
 							<title level="m">Comitato Nazionale per le Celebrazioni Belliniane</title>
-								<biblScope unit="volume">XIII</biblScope>
-												<biblScope unit="page" from="24" to="27">24-27</biblScope>
-												<pubPlace>Valverde</pubPlace>
+							<biblScope unit="volume">XIII</biblScope>
+							<biblScope unit="page" from="24" to="27">24-27</biblScope>
+							<pubPlace>Valverde</pubPlace>
 							<publisher>Il Girasole Edizioni</publisher>
 							<date when="2001">2001</date>
                     	</bibl>

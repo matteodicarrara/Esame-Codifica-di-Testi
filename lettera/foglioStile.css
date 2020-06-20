@@ -9,8 +9,6 @@ header{
 }
 #tit{
     font-size: 1.9em;
-   
-
 }
 body{
     background-color:#f9f2ec;   
@@ -24,8 +22,12 @@ div.int{
     background-color:maroon;
     color: white;
     width: 30%;
-    margin-left: 35%;
     margin-top: 10px;
+    float: left;
+    margin-left: 13%;
+}
+div#msA{
+    clear: both;
 }
 div.int p{
     font-size: 0.8em;
@@ -35,14 +37,16 @@ h3.bottone{
 }
 div#dS{
     width: 80%;
-    margin-left: 75px;
+    clear: both;
     margin-bottom: 10px;
+    margin-left: 10%;
 }
 div#dS p{
     padding: 5px;
 }
 
 /*Box informazioni lettera*/
+
 #bel{
     clear: both;
     margin-left: 10%;
@@ -84,7 +88,7 @@ p.int{
 /*Testo lettera*/
 .annot{
     position: relative;
-    left: 15%;
+    
     width: 10px;
     font-size: 0.8em;
 }
@@ -202,18 +206,18 @@ a.org{
 }
 #avanti {
     position: absolute;
-    width: 6%;
-    cursor: pointer;
-    top:161%;
-    left: 54%;
+width: 92px;
+cursor: pointer;
+top: 160%;
+left: 54%;
 }
 
 #indietro {
-    width: 12%;
-    cursor: pointer;
-    position: absolute;
-    left: 1px;
-    top:160%;
+    width: 90px;
+cursor: pointer;
+position: absolute;
+left: 18px;
+top: 160%;
 }
 /*Fondo pagina*/
 
@@ -262,12 +266,29 @@ a{
 }
 div#bib{
     clear: both;
-    width: 30%;
-    margin-left: 38%; 
+    margin-left: 1%;
+    font-size: 0.8em;
+}
+div#bib,div#dF,div#msDesc{
+    width: 30%; 
     background-color: maroon;
     color:white;
     margin-bottom: 2%;
     float: left;
+    padding-left: 1px;
+    text-align: center;
+}
+div#msDesc{
+    margin-left: 6%;
+    font-size: 0.7em;
+    padding-bottom: 5px;
+}
+div#dF{
+    font-size: 0.6em;
+    margin-left: 2%;
+}
+div#dF h2,div#msDesc h2{
+    cursor: pointer;
 }
 div#leg{
     border: solid;
@@ -276,9 +297,9 @@ div#leg{
     text-align: center;
     float: left;
     position: absolute;
-    top:109%;
+    top:119%;
     left: 89%;
-    font-size: 0.4em;   
+    font-size: 0.8em;   
 }
 #legenda{
     background-color: maroon;
@@ -292,9 +313,8 @@ div#leg p{
     width: 60%;
     margin-left: 21%; 
 }
-div#bib,div#leg{
+div#bib,div#leg,div#dF,div#msDesc{
     border-radius: 5px;
-    font-size: 0.8em;
 }
 div#leg:target{
     background-color:#f9f2ec;  
@@ -344,6 +364,18 @@ div#leg h2{
 #pBib{
     text-align: center;
 }
+span.note{
+    font-size: 0.6em;
+    border-top: solid;
+    border-width: 1px;
+    padding-top: 5px;
+}
+span.note:target{
+    background-color: white;
+    color: maroon;
+    font-weight: bold;
+}
+
 /*Mappa1*/
 div.mappe{
     display: block;
@@ -358,3 +390,29 @@ div.mappe{
 a.zona:hover{
     background-color:rgba(255,255,0,0.3);;
 }
+/*RESPONSIVE*/
+@media screen and (min-width: 2600px){
+    div#luoghi,div#persone,div#edifici{
+        height: 30%;
+    }
+    #indietro{
+        top:80%;
+        left: 10%;
+    }
+    div#imgLettera{
+        margin-left:7% ;
+    }
+    #avanti{
+        left: 43%;
+        top: 80%;
+    }
+    div#testoLettera{
+        margin-left: 5%;
+    }
+    div#dS{
+        margin-left: 155px;
+    }
+    footer{
+        padding-right: 10%;
+    }
+} 

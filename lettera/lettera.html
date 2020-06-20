@@ -5,11 +5,15 @@
                         $("#descFis").click(function(){
                            $(this).next().toggle();
                         });
-                        $("div#bib").find("p").hide();
+                        $("div#bib, div#dF").find("p").hide();
+                         $("span#bb").hide();
                         $("#sarza").click(function(){
                             $("#pBib").toggle();
+                            $("span#bb").toggle();
                         });
-                    
+                        $("div#dF h2").click(function(){
+                            $(this).next().toggle();
+                        });
                         $(".orig, .abbr").click(function(){
                             $(this).hide();
                             $(this).next().show();
@@ -20,7 +24,7 @@
                         });
                       
                     });
-                </script><link href="foglioStile.css" rel="stylesheet" type="text/css"></link><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"></link><title>Lettera di Bellini a Pietro Ponzani</title></head><body><header><span id="tit">Lettera di Bellini a Pietro Ponzani</span></header><div id="InfoLettera"><h2>Informazioni lettera</h2><div class="int"><h3 class="bottone">Data</h3><p>30 maggio 1835</p></div><div class="int"><h3 class="bottone">Luogo</h3><p>Puteaux</p></div><div class="int"><h3 class="bottone">Lingua</h3><p>italiano di inizio Ottocento con indirizzo in francese</p></div><div class="int" id="dS"><h3 id="descFis">Descrizione fisica</h3><p>Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti e con testo solo nel fronte e verso bianco. 
+                </script><link href="foglioStile.css" rel="stylesheet" type="text/css"></link><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"></link><title>Progetto codifica Sarzanini e Filosa</title></head><body><header><span id="tit">Vincenzo Bellini a Pietro Ponzani, in Puteaux, 30 maggio 1835</span></header><div id="InfoLettera"><h2>Informazioni lettera</h2><div class="int" id="msD"><h3 class="bottone">Data</h3><p>30 maggio 1835</p></div><div class="int" id="msLu"><h3 class="bottone">Luogo</h3><p>Puteaux</p></div><div class="int" id="msA"><h3 class="bottone">Autore</h3><p>Vincenzo Bellini per Pietro Ponzani</p></div><div class="int" id="msLi"><h3 class="bottone">Lingua</h3><p>italiano di inizio Ottocento con indirizzo in francese</p></div><div class="int" id="dS"><h3 id="descFis">Descrizione</h3><p>Lettera in buone condizioni fisiche, composta da un solo folio, piegato in più parti e con testo solo nel fronte e verso bianco. 
                                         Carta sottile senza filigrana, colore beige, inchiostro nero. Il fronte presenta un segno non ben identificato d'inchiostro	nero
                                         che va a coprire parti scritte non complicandone tuttavia la lettura, inoltre è presente un'annotazione dell'autore nel margine 
                                         sinistro del fronte recto; il retro del folio presenta una scritta ed un numero d'inchiostro blu. 
@@ -238,8 +242,8 @@
 								<br></br><span class="riga" id="LL1.29_line_1fr_02">2</span>
 									
 									
-										<a class="place" href="#Paris">près de Paris</a>
-										<a class="place" href="#Put">à Puteaux</a>
+									<a class="place" href="#Paris">près de Paris</a>
+									<a class="place" href="#Put">à Puteaux</a>
 									
 								
 							
@@ -250,26 +254,25 @@
                     1: Luogo
                 </a>
 					</p></div><div class="p1" id="ab_02">
-							<span id="s_02a" class="
+							<span id="s_02" class="
                 sentence
             ">
 							<span class="riga" id="LL1.29_line_1fr_03">3</span>
 								Mio caro<a class="person" href="#PP">Ponzani</a>
-								
 							</span><a class="
                         frase
                     " href="
-                        #s_02a">
-                    1: Saluto
+                        #s_02">
+                    2: Saluto
                 </a>
 					</div><div id="03" class="p1"><p>
-						<span id="s_02b" class="
+						<span id="s_03" class="
                 sentence
             ">
 						<span class="riga" id="LL1.29_line_1fr_04">4</span>
-							<a class="person" href="#GBa">Barbò </a> ha dovuto scriverti
+							<a class="person" href="#GBa">Barbò</a> ha dovuto scriverti
 						<br></br><span class="riga" id="LL1.29_line_1fr_05">5</span>
-							ch’io avea ricevuto la tua lettera ed
+							<span class="orig">ch’io avea</span><span class="reg" hidden="hidden">che io avevo</span> ricevuto la tua lettera ed
 						
 						<span class="annot" id="LL1.29_line_1fr_S"><br></br>
             [Segno grafico non decifrabile].
@@ -300,11 +303,10 @@
 						</span><a class="
                         frase
                     " href="
-                        #s_02b">
-                    Frase 2
-                </a>
-										
-						<span id="s_03" class="
+                        #s_03">
+                    Frase 3</a>
+					
+						<span id="s_04" class="
                 sentence
             ">
 							<a class="person" href="#SL">Levy</a> mi dice di salutarti
@@ -317,9 +319,9 @@
 						</span><a class="
                         frase
                     " href="
-                        #s_03">
-                    Frase 3</a>
-						<span id="s_04" class="
+                        #s_04">
+                    Frase 4</a>
+						<span id="s_05" class="
                 sentence
             ">
 							– Io mi trovo in campagna
@@ -339,9 +341,9 @@
 						</span><a class="
                         frase
                     " href="
-                        #s_04">
-                    Frase 4</a>
-						<span id="s_05a" class="
+                        #s_05">
+                    Frase 5</a>
+						<span id="s_06a" class="
                 sentence
             ">
 							– Delle guerre
@@ -360,11 +362,11 @@
 						</span><a class="
                         frase
                     " href="
-                        #s_05a">
-                    Frase 5
+                        #s_06a">
+                    Frase 6
                 </a>
 					</p></div><div id="04" class="p2"><p>
-						<span id="s_05b" class="
+						<span id="s_06b" class="
                 sentence
             ">
 						<span class="riga" id="LL1.29_line_1rr_01">01</span>
@@ -380,8 +382,8 @@
 						</span><a class="
                         frase
                     " href="
-                        #s_05b">
-                    Frase 5
+                        #s_06b">
+                    Frase 6
                 </a>
 							
 					</p></div><div id="05" class="p3"><p>
@@ -392,9 +394,9 @@
 						<a class="place" href="">	
 							
 						</a>
-						<p>
+						
 							 
-						</p>
+						
 					
 				</p></div><div id="06" class="p4"><p>
 					
@@ -408,30 +410,18 @@
             Scritta non decifrabile, ma riferibile ad una seconda mano.
         </span>
 				</p></div><a href="#leg" id="legenda">Legenda</a></div><div id="persone"><h2>Persone</h2>
-					<div id="VB" class="persona"><p><b>Vincenzo Bellini</b><br></br>
-                        Alias: Il Cigno<br></br>
-                        Onoreficenze: Cavaliere della Legione d'onore<br></br>
-                        Data di nascita: 3 novembre 1801 
-                        Luogo: Catania
+					<div id="VB" class="persona"><p><b>Vincenzo Bellini</b><br></br><b>Alias: </b>Il Cigno<br></br> <b>Onoreficenze: </b>Cavaliere della Legione d'onore<br></br> <b>Data di nascita: </b>3 novembre 1801 <b>Luogo: </b>Catania
                         (Catania, Italia).
-                        <br></br>
-                        Data di morte: 23 settembre 1835 
-                        Luogo: Puteaux
+                        <br></br> <b>Data di morte: </b>23 settembre 1835 <b>Luogo: </b>Puteaux
                         (Paris, Italia).
                     </p></div>
 
-					<div id="GBa" class="persona"><p><b>Giacomo Barbò</b><br></br>
-                        Data di nascita: 1786
-                        Data di morte: 1849</p></div>
+					<div id="GBa" class="persona"><p><b>Giacomo Barbò</b><br></br> <b>Professione: </b>lord  <b>Data di nascita: </b>1786 <b>Data di morte: </b>1849</p></div>
 
-					<div id="PP" class="persona"><p><b>Pietro Ponzani</b><br></br>
-                        Data di nascita: 1780
-                        Data di morte: 1860</p></div>
+					<div id="PP" class="persona"><p><b>Pietro Ponzani</b><br></br> <b>Professione: </b>lawyer  <b>Data di nascita: </b>1780 <b>Data di morte: </b>1860</p></div>
 
 
-					<div id="SL" class="persona"><p><b>Levy Solomon</b><br></br>
-                        Data di nascita: Sconosciuta
-                        Data di morte: Sconosciuta</p></div>
+					<div id="SL" class="persona"><p><b>Levy Solomon</b><br></br> <b>Professione: </b>Unknown  <b>Data di nascita: </b>Sconosciuta <b>Data di morte: </b>Sconosciuta</p></div>
 				</div><div id="luoghi"><h2>Luoghi</h2>
 					<div id="CT" class="luogo"><b>Catania</b>, Italia<br></br></div>
 
@@ -465,7 +455,39 @@
                 <b> Data: </b>2001.
             
 
-					</p></div></div><footer>
+					</p><span id="bb"><b>Bibliografia file: </b>Seminara2017, n°442/2, 512.
+        </span></div><div id="msDesc"><h2>Informazioni aggiuntive</h2><p><b>Ubicazione: </b>in esposizione Casa Natale, sala B, vetrina 5, ripiano 2, IV
+        (Catania, Catania).<br></br><b>Codice lettera: </b>LL1.29<br></br><b>Museo Belliniano Catania</b></p><b>Mittente: </b><a class="
+                rim
+            " href="#LL1_29_note1">Nota
+        </a><br></br><b>Lingua: </b>
+				italiano di inizio Ottocento
+				francese
+			</div><div id="dF"><h2>Caratteristiche fisiche lettera</h2><p><b>Materiale: </b>Carta sottile.<br></br><b>Segni postali: </b> Non sono presenti francobolli, ma alla terza pagina è presente un timbro probabilmente riferibile
+											all'arrivo della lettera.
+					 						
+									<br></br><b>Folio: </b>1 (
+										134
+										204
+									mm).<br></br>		
+									Il fronte è piegato in recto (a dx) e verso (a sx). Il folio presenta una duplice piegatura asimmetrica, con il margine inferiore piegato più ampio. 
+								<br></br><b>Condizioni: </b>
+									
+									Lettera in buone condizioni fisiche.
+								<br></br><b>Scrittura: </b>
+							
+                            Scrittura a mano libera leggibile. Il folio fronte, nel verso superiore presenta un'annotazione probabilmente dell'autore.
+							
+                            
+															
+								Una annotazione è probabilmente dovuta ad un catalogatore e presenta il numero 5 e un'ulteriore annotazione difficilmente leggibile.
+								
+							
+						<br></br><b>Segnatura: </b>		
+								All'interno del carteggio belliniano (LL), la segnatura LL1.29 identifica la ventinovesima lettera in ordine cronologico del primo sottogruppo, 
+                                che corrisponde all'epistolario di Vincenzo Bellini.
+								
+							</p><p><b>Fondazione Bellini</b>CC-BY 4.0</p></div></div><footer>
 					<br></br><b>transcription by:
         </b>
 					Graziella Seminara
@@ -479,6 +501,6 @@
 				
 					<br></br><b>Encoding by:
         </b>
-					Mattia Filosa
 					Matteo Sarzanini
-				<br></br></footer></body></html>
+					Mattia Filosa
+				<br></br>Fondazione Bellini, CC-BY 4.0<br></br><b>Soggettario di riferimento: </b>http://thes.bncf.firenze.sbn.it<br></br><span class="note" id="LL1_29_note1">Non si ha la certezza che la lettera sia stata spedita poichè l'unico timbro presente è illeggibile</span></footer></body></html>

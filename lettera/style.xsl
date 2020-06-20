@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-xmlns:tei="http://www.tei-c.org/ns/1.0"
-xmlns="http://www.w3.org/1999/xhtml">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns="http://www.w3.org/1999/xhtml">
     <xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
     <xsl:template match="/">
+        
         <html>
             <head>
                 <script src="lettera.js"/>
@@ -15,11 +13,15 @@ xmlns="http://www.w3.org/1999/xhtml">
                         $("#descFis").click(function(){
                            $(this).next().toggle();
                         });
-                        $("div#bib").find("p").hide();
+                        $("div#bib, div#dF").find("p").hide();
+                         $("span#bb").hide();
                         $("#sarza").click(function(){
                             $("#pBib").toggle();
+                            $("span#bb").toggle();
                         });
-                    
+                        $("div#dF h2").click(function(){
+                            $(this).next().toggle();
+                        });
                         $(".orig, .abbr").click(function(){
                             $(this).hide();
                             $(this).next().show();
@@ -34,17 +36,14 @@ xmlns="http://www.w3.org/1999/xhtml">
 
                 <link href="foglioStile.css" rel="stylesheet" type="text/css"/>
                 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/> 
-                <title>Lettera di Bellini a Pietro Ponzani</title>
+                <title>Progetto codifica Sarzanini e Filosa</title>
             </head>
             <body>
                 <header>
-                    <span id = "tit">Lettera di Bellini a Pietro Ponzani</span>
+                    <span id = "tit"><xsl:apply-templates select = "//tei:teiHeader//tei:titleStmt//tei:title"/></span>
                 </header>
                 <div id = "InfoLettera">
-                    <xsl:apply-templates select = "//tei:teiHeader"/>
-                    <xsl:apply-templates select = "//tei:date[@xml:id='datPrinc']"/>
-                    <xsl:apply-templates select = "//tei:msItem//tei:title//tei:placeName"/>
-                    <xsl:apply-templates select = "//tei:msItem//tei:textLang"/>
+                    <xsl:apply-templates select = "//tei:msContents"/>
                     <xsl:apply-templates select = "//tei:p[@xml:id = 'descLet']"/>
                 </div>
                 
@@ -62,7 +61,6 @@ xmlns="http://www.w3.org/1999/xhtml">
                     
                     <div id = "imgLettera" >
                         <img src = "sinistra.png" id = "indietro"/>
-                        <!--<img id="LL1.29_000"/>-->  
                         <!--Mappe interattive-->
                          
                         <div id = "mappa1" class = "mappe" style = "display:none">
@@ -229,6 +227,19 @@ xmlns="http://www.w3.org/1999/xhtml">
 
                     <div id = "bib">
                         <xsl:apply-templates select = "//tei:listBibl"/>
+                        <xsl:apply-templates select ="//tei:fileDesc//tei:bibl[@source ='#Seminara2017' and @ana = '442/2']"/>
+                    </div>
+
+                   <div id = "msDesc">
+                        <xsl:apply-templates select = "//tei:msDesc"/>
+                        <xsl:apply-templates select = "//tei:profileDesc"/>
+                        <b>Lingua: </b><xsl:apply-templates select = "//tei:langUsage"/>
+
+                    </div>
+                    
+                    <div id = "dF">
+                        <xsl:apply-templates select = "//tei:physDesc"/>
+                        <xsl:apply-templates select = "//tei:publicationStmt"/>
                     </div>
 
                 </div>
@@ -237,42 +248,32 @@ xmlns="http://www.w3.org/1999/xhtml">
                     <xsl:apply-templates select = "//tei:titleStmt//tei:respStmt"/>
                     <xsl:apply-templates select = "//tei:editionStmt//tei:edition"/>
                     <xsl:apply-templates select = "//tei:editionStmt//tei:respStmt"/><br/>
+                    <xsl:apply-templates select = "//tei:publicationStmt//tei:publisher"/>, <xsl:apply-templates select = "//tei:publicationStmt//tei:licence"/>
+                    <xsl:apply-templates select = "//tei:textClass"/>
+                    <xsl:apply-templates select = "//tei:back//tei:note"/>
                 </footer>
+
             </body>
         </html>
     </xsl:template>
 
-    <!--Template per informazioni generali sulla lettera-->
-    <xsl:template match = "tei:teiHeader">
+    <!--Template per informazioni generali sulla lettera--> 
+    <xsl:template match = "tei:msContents">
         <h2>Informazioni lettera</h2>
-    </xsl:template>
-
-    <xsl:template match = "tei:date">
-        <xsl:choose>
-            <xsl:when test = "@when ='1835-05-30'">
-                <div class = "int"><h3 class = "bottone">Data</h3>
-                <p><xsl:apply-templates/></p></div>
-            </xsl:when>
-            <xsl:otherwise>
-                  <p><xsl:apply-templates/> </p>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match = "tei:teiHeader//tei:msContents//tei:placeName">
-       <div class = "int"><h3 class = "bottone">Luogo</h3>
-          <p><xsl:apply-templates/></p></div>
-    </xsl:template>
-
-    <xsl:template match = "tei:textLang">
-        <div class = "int"><h3 class = "bottone">Lingua</h3>
-        <p><xsl:apply-templates/></p></div>
+        <div class = "int" id = "msD"><h3 class = "bottone">Data</h3>
+            <p><xsl:value-of select = "current()//tei:date"/></p></div>
+        <div class = "int" id = "msLu"><h3 class = "bottone">Luogo</h3>
+          <p><xsl:value-of select = "current()//tei:placeName"/></p></div>
+        <div class = "int" id = "msA"><h3 class = "bottone">Autore</h3>
+        <p><xsl:value-of select = "current()//tei:author"/> per <xsl:value-of select = "current()//tei:persName[@ref = '#PP']"/></p></div>
+         <div class = "int" id = "msLi"><h3 class = "bottone">Lingua</h3>
+          <p><xsl:value-of select = "current()//tei:textLang"/></p></div>
     </xsl:template>
 
     <xsl:template match = "tei:p">
         <xsl:choose>
             <xsl:when test = "@xml:id='descLet'">
-                <div class = "int" id = "dS"><h3 id = "descFis">Descrizione fisica</h3>
+                <div class = "int" id = "dS"><h3 id = "descFis">Descrizione</h3>
                 <p><xsl:apply-templates/></p></div>
             </xsl:when>
             <xsl:otherwise>
@@ -301,19 +302,20 @@ xmlns="http://www.w3.org/1999/xhtml">
                 <xsl:value-of select = "current()//tei:surname"/></b> <br/>
                 <xsl:choose>
                     <xsl:when test = "@xml:id = 'VB'">
-                        Alias: <xsl:value-of select = "current()//tei:addName"/> <br/>
-                        Onoreficenze: <xsl:value-of select = "current()//tei:roleName"/><br/>
-                        Data di nascita: <xsl:value-of select = "current()//tei:birth//tei:date"/> 
-                        Luogo: <xsl:value-of select = "current()//tei:birth//tei:placeName//tei:settlement[@type='municipality']"/>
+                        <b>Alias: </b><xsl:value-of select = "current()//tei:addName"/> <br/>
+                        <xsl:text> </xsl:text><b>Onoreficenze: </b><xsl:value-of select = "current()//tei:roleName"/><br/>
+                        <xsl:text> </xsl:text><b>Data di nascita: </b><xsl:value-of select = "current()//tei:birth//tei:date"/> 
+                        <xsl:text> </xsl:text><b>Luogo: </b><xsl:value-of select = "current()//tei:birth//tei:placeName//tei:settlement[@type='municipality']"/>
                         (<xsl:value-of select = "current()//tei:birth//tei:placeName//tei:settlement[@type='provincia']"/>, <xsl:value-of select = "current()//tei:birth//tei:placeName//tei:country"/>).
                         <br/>
-                        Data di morte: <xsl:value-of select = "current()//tei:death//tei:date"/> 
-                        Luogo: <xsl:value-of select = "current()//tei:death//tei:placeName//tei:settlement[@type='municipality']"/>
+                        <xsl:text> </xsl:text><b>Data di morte: </b><xsl:value-of select = "current()//tei:death//tei:date"/> 
+                        <xsl:text> </xsl:text><b>Luogo: </b><xsl:value-of select = "current()//tei:death//tei:placeName//tei:settlement[@type='municipality']"/>
                         (<xsl:value-of select = "current()//tei:death//tei:placeName//tei:settlement[@type='department']"/>, <xsl:value-of select = "current()//tei:birth//tei:placeName//tei:country"/>).
                     </xsl:when>
                     <xsl:otherwise>
-                        Data di nascita: <xsl:value-of select = "current()//tei:birth//tei:date"/>
-                        Data di morte: <xsl:value-of select = "current()//tei:death//tei:date"/> 
+                        <xsl:text> </xsl:text><b>Professione: </b><xsl:value-of select = "current()//tei:persName/@role"/><xsl:text> </xsl:text>
+                        <xsl:text> </xsl:text><b>Data di nascita: </b><xsl:value-of select = "current()//tei:birth//tei:date"/>
+                        <xsl:text> </xsl:text><b>Data di morte: </b><xsl:value-of select = "current()//tei:death//tei:date"/> 
                     </xsl:otherwise>
                 </xsl:choose>
             </p>
@@ -391,7 +393,7 @@ xmlns="http://www.w3.org/1999/xhtml">
     <xsl:template match = "tei:s">
         <span>
             <xsl:attribute name = "id">
-                <xsl:value-of select = "current()/@n"/>
+                <xsl:value-of select = "current()/@xml:id"/>
             </xsl:attribute>
             <xsl:attribute name = "class">
                 sentence
@@ -399,59 +401,49 @@ xmlns="http://www.w3.org/1999/xhtml">
             <xsl:apply-templates/>
         </span>
         <xsl:choose>  
-            <xsl:when test = "@n='s_01'">
+            <xsl:when test = "@xml:id='s_01'">
                 <a> 
                     <xsl:attribute name = "class">
                         frase
                     </xsl:attribute>
                     <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
+                        #<xsl:value-of select = "current()/@xml:id"/>
                     </xsl:attribute>
                     1: Luogo
                 </a>   
             </xsl:when>
-            <xsl:when test = "@n='s_02a'">
+            <xsl:when test = "@xml:id='s_02'">
                 <a> 
                     <xsl:attribute name = "class">
                         frase
                     </xsl:attribute>
                     <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
+                        #<xsl:value-of select = "current()/@xml:id"/>
                     </xsl:attribute>
-                    1: Saluto
+                    2: Saluto
                 </a>   
             </xsl:when>
-            <xsl:when test = "@n='s_02b'">
+     
+            <xsl:when test = "@xml:id='s_06a'">
                 <a> 
                     <xsl:attribute name = "class">
                         frase
                     </xsl:attribute>
                     <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
+                        #<xsl:value-of select = "current()/@xml:id"/>
                     </xsl:attribute>
-                    Frase 2
+                    Frase 6
                 </a>   
             </xsl:when>
-            <xsl:when test = "@n='s_05a'">
+             <xsl:when test = "@xml:id='s_06b'">
                 <a> 
                     <xsl:attribute name = "class">
                         frase
                     </xsl:attribute>
                     <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
+                        #<xsl:value-of select = "current()/@xml:id"/>
                     </xsl:attribute>
-                    Frase 5
-                </a>   
-            </xsl:when>
-             <xsl:when test = "@n='s_05b'">
-                <a> 
-                    <xsl:attribute name = "class">
-                        frase
-                    </xsl:attribute>
-                    <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
-                    </xsl:attribute>
-                    Frase 5
+                    Frase 6
                 </a>   
             </xsl:when>
             <xsl:otherwise>
@@ -460,9 +452,9 @@ xmlns="http://www.w3.org/1999/xhtml">
                         frase
                     </xsl:attribute>
                     <xsl:attribute name = "href">
-                        #<xsl:value-of select = "current()/@n"/>
+                        #<xsl:value-of select = "current()/@xml:id"/>
                     </xsl:attribute>
-                    Frase <xsl:value-of select = "translate(current()/@n,'s_02','')"/>
+                    Frase <xsl:value-of select = "translate(current()/@xml:id,'s_0','')"/>
                 </a>   
             </xsl:otherwise>
         </xsl:choose> 
@@ -648,6 +640,52 @@ xmlns="http://www.w3.org/1999/xhtml">
         <p id = "pBib"><xsl:apply-templates/></p>
     </xsl:template>
 
+    <xsl:template match = "tei:publicationStmt">
+        <p><b><xsl:value-of select = "//tei:publisher"/></b>
+        <xsl:value-of select = "//tei:licence"/></p>
+    </xsl:template>
+
+    <xsl:template match = "tei:msDesc">
+        <h2>Informazioni aggiuntive</h2>
+        <p><b>Ubicazione: </b><xsl:value-of select = "//tei:idno[@type = 'collocation']"/>
+        (<xsl:value-of select = "current()//tei:msIdentifier//tei:settlement"/>, <xsl:value-of select = "current()//tei:msIdentifier//tei:settlement"/>).<br/>
+        <b>Codice lettera: </b><xsl:value-of select = "//tei:idno[@xml:id='codiceL']"/><br/>
+        <b><xsl:value-of select = "current()//tei:repository"/></b></p>
+    </xsl:template>
+
+    <xsl:template match = "tei:profileDesc">
+        <b>Mittente: </b>
+        <a>
+            <xsl:attribute name = "class">
+                rim
+            </xsl:attribute>
+            <xsl:attribute name = "href">
+                <xsl:value-of select="current()//tei:ptr/@target"/>
+            </xsl:attribute>Nota
+        </a><br/>
+    </xsl:template>
+
+   <xsl:template match = "tei:physDesc">
+            <h2>Caratteristiche fisiche lettera</h2>
+            <p><b>Materiale: </b><xsl:value-of select = "//tei:material"/><br/>
+            <b>Segni postali: </b> <xsl:value-of select = "//tei:stamp"/><br/>
+            <b>Folio: </b><xsl:value-of select = "//tei:measure"/> (<xsl:value-of select = "//tei:dimensions"/><xsl:value-of select = "//tei:dimensions/@unit"/>).<br/>
+            <xsl:value-of select = "//tei:foliation"/><br/>
+            <b>Condizioni: </b><xsl:value-of select = "//tei:condition"/><br/>
+            <b>Scrittura: </b><xsl:value-of select = "//tei:handDesc"/><br/>
+            <b>Segnatura: </b><xsl:value-of select = "//tei:additional//tei:note"/></p>
+           
+   </xsl:template> 
+
+    <xsl:template match = "tei:fileDesc//tei:bibl">
+         <span id = "bb">
+            <b>Bibliografia file: </b>
+            <xsl:value-of select = "translate(current()/@source,'#','')"/>,<xsl:text> </xsl:text>
+            <xsl:text>n°</xsl:text><xsl:value-of select = "current()/@ana"/>,<xsl:text> </xsl:text>
+            <xsl:value-of select = "current()//tei:citedRange"/>.
+        </span>
+    </xsl:template>
+
     <xsl:template match = "tei:bibl">
         <xsl:choose>
             <xsl:when test = "@xml:id='Seminara2001'">
@@ -664,5 +702,21 @@ xmlns="http://www.w3.org/1999/xhtml">
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+
+    <xsl:template match = "tei:textClass">
+        <br/>
+        <b>Soggettario di riferimento: </b><xsl:value-of select = "current()//tei:keywords/@scheme"/>
+    </xsl:template>
+
+    <xsl:template match = "tei:back//tei:note">
+        <br/>
+        <span class = "note">
+            <xsl:attribute name = "id">
+                <xsl:value-of select = "current()/@xml:id"/>
+            </xsl:attribute>
+            <xsl:value-of select = "current()//tei:p"/>
+        </span>
+    </xsl:template>
+    
 
 </xsl:stylesheet>

@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!--
     Author: Mattia Filosa & Matteo Sarzanini
-    Date: 2020 May 15
+    Date: 2020 June 20
     Title: Codifica lettera LL1.29 esame
     <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?
 -->
@@ -31,24 +31,24 @@
 				</respStmt>
 				<respStmt>
 					<resp>Encoding by</resp>
-					<name ref="#MF">Mattia Filosa</name>
 					<name ref="#MS">Matteo Sarzanini</name>
+					<name ref="#MF">Mattia Filosa</name>
 				</respStmt>
 			</editionStmt>
 
             <publicationStmt>
+
 				<publisher>Fondazione Bellini</publisher>
                 <availability>
 					<licence target="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</licence>
 				</availability>
-                <idno type="http://http://www.studibelliniani.eu/"></idno>
-
+               
 			</publicationStmt>
 
             <sourceDesc>
 				<listPerson>
 					<person xml:id="VB" sameAs="http://viaf.org/viaf/39560983"> 
-         	 			<persName role="composer"> <!-- esempi: composer, librettist, tenore, editor, ...-->
+         	 			<persName role="composer"> 
 							<ref target="http://data.rism.info/id/rismauthorities/pe11648 http://www.treccani.it/enciclopedia/vincenzo-bellini_(Dizionario-Biografico)"/>
 							<forename>Vincenzo</forename>
 							<forename>Salvatore</forename>
@@ -74,8 +74,7 @@
 								<country key="FR">France</country>
 							</placeName>
 						</death>
-						<note><!--  note da creare con l'indicazione di dove e' vissuto durante quali periodi  -->
-						</note>          		
+						      		
           			</person>
 
 					<person xml:id="GBa">
@@ -111,7 +110,7 @@
 
 
 					<person xml:id = "SL">
-						<persName>
+						<persName role = "Unknown">
 							<forename>Levy</forename>
 							<surname>Solomon</surname>
 						</persName>	
@@ -199,10 +198,10 @@
                     <msIdentifier>
 						<country>Italy</country>
 						<settlement>Catania</settlement>
-						<repository role="museum" ref="http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436" n="I-CATm">Museo Belliniano Catania</repository>
+						<repository role="museum" ref="http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436 http://www.rism.info/typo3conf/ext/user_apachesolr/result.php?q=id:30003436#LL1.29" n="I-CATm">Museo Belliniano Catania</repository>
 						<!-- riferimento al catalogo delle sigle dei musei in cui è definito I-CATm -->
-						<!-- mettere come secondo valore di ref del tag repository l'URI del nodo museo del dataset del Belliniano -->
-						<idno xml:id = "codiceL" type="inventory">LL1.29</idno>						<!-- segnatura della singola lettera -->
+						
+						<idno xml:id = "codiceL">LL1.29</idno>						<!-- segnatura della singola lettera -->
 						<altIdentifier><idno type="collocation">in esposizione Casa Natale, sala B, vetrina 5, ripiano 2, IV</idno></altIdentifier>
 						<!-- collocazione della lettera al museo -->
 					</msIdentifier>
@@ -210,14 +209,14 @@
                     <msContents>
 						<msItem>
 							<author xml:id = "mittLett" xml:lang="it" ref="#VB">Vincenzo Bellini</author>
-                            <title type="uniform" xml:lang="it">
-								<persName ref="#VB" role="composer">Vincenzo Bellini</persName>a
-                                <persName ref="#PP" role="lawyer">Pietro Ponzani</persName>, in
-                                <placeName xml:id = "luogPrinc" ref="#Put">Puteaux</placeName>,								
-                                <date xml:id = "datPrinc" when="1835-05-30">30 maggio 1835</date>
+                            <title>
+								<persName ref="#VB">Vincenzo Bellini</persName>a
+                                <persName ref="#PP">Pietro Ponzani</persName>, in
+                                <placeName ref="#Put">Puteaux</placeName>,								
+                                <date>30 maggio 1835</date>
 							</title>
 							
-                            <textLang mainLang="it" otherLangs="fr">italiano di inizio Ottocento con indirizzo in francese</textLang>
+                            <textLang>italiano di inizio Ottocento con indirizzo in francese</textLang>
 						</msItem>
 					</msContents>
                     
@@ -227,9 +226,6 @@
 
 								<support>
 									<material>Carta sottile.</material>
-									<watermark>
-										<!-- info sulla filigrana: se c'è viene descritta in linguaggio naturale (es. forma della filigrana [circolare, lineare], la scuola di appartenenza -->
-									</watermark>
 									<stamp> Non sono presenti francobolli, ma alla terza pagina è presente un timbro probabilmente riferibile
 											all'arrivo della lettera.
 					 						<!-- E' la descrizione in linguaggio naturale dei francobolli e dei timbri  -->
@@ -264,7 +260,7 @@
                         </objectDesc>
                         
                         <handDesc hands="2">
-							<handNote>
+							<handNote xml:id = "h1">
                             <p>Scrittura a mano libera leggibile. Il folio fronte, nel verso superiore presenta un'annotazione probabilmente dell'autore.
 							</p>
                             </handNote>
@@ -273,11 +269,7 @@
 								</p>
 							</handNote>
 						</handDesc>
-						<sealDesc>							<!-- inserire eventuali sigilli presenti -->
-							<seal>
-								<p>Il margine superiore del recto verso presenta l'ombra di un timbro completamente illeggibile.</p>
-							</seal>
-						</sealDesc>
+				
                     </physDesc>
                     
                     <additional>
@@ -296,22 +288,16 @@
 
         <profileDesc>
 			<correspDesc>
-				<correspAction type="sent">
-					<persName ref="#VB" role="composer">Vincenzo Bellini</persName>
-					<placeName ref="#NSS">Neuilly-sur-Seine</placeName>
-					<date when="1835-05-30">30 maggio 1835</date>
-				</correspAction>
-				<correspContext>
-					<p>Non è presente un contesto di riferimento</p>
-				</correspContext>
+				<ptr target="#LL1_29_note1"/>	
 			</correspDesc>
 
 			<textClass>
-				<keywords scheme="http://thes.bncf.firenze.sbn.it">		<!--                                                                                                   DA VEDERE                -->	
+				<keywords scheme="http://thes.bncf.firenze.sbn.it">	
 					<term resp="#GS"> lettera 					
 					</term>
 				</keywords>
 			</textClass>
+
 			<langUsage>
 				<language ident="it">italiano di inizio Ottocento</language>
 				<language ident="fr">francese</language>
@@ -379,43 +365,14 @@
 		</surface>
 	</facsimile> 
 
-    <text type="letter" xml:id="LL1.29" subtype="manuscript" n="LL1.29">
-		<front> <!--FRONTE RECTO-->
-			<pb n="1" xml:id="LL1.29_fol_1fr_front" facs="#LL1.29_folio_1fr"/>
-			<div type="envelope">			
-				<div type="sent"> 	
-					<ab>			
-						<mentioned>
-							<placeName ref="#NSS">NEUILLY - SUR - SEINE</placeName>
-							<date when="1835-05-30"> 30 maggio 1835 </date>
-						</mentioned>
-					</ab>
-				</div>
-				
-				<div type="destination">
-					<ab xml:id="LL1.29_hs_1fv_01" facs="#LL1.29_line_1rv_01">					
-						<stamp type="postmark">					<!-- timbro del destinatario con data -->
-							<placeName>
-								<gap reason="illegible"/>
-							</placeName>
-							<mentioned>
-								<date> 
-									<gap reason="illegible"/>
-								</date>
-							</mentioned>
-						</stamp>
-					</ab>
-				</div>
-			
-			</div>
-		</front>
-
+    <text type="letter" xml:id="LL1.29">
+	
 		<body xml:lang="it">
-			<div type="fronte-recto">
+			<div>
 				<pb n="1" xml:id="LL1.29_fol_1fr" facs="#LL1.29_folio_1fr"/>
-				<div type="opener" n="o_01">
+				<div>
 					<ab n = "ab_01">
-						<s type="sentence" n="s_01">
+						<s type="sentence" xml:id = "s_01">
 							<lb xml:id="LL1.29_lb_1fr_01" n="1" facs="#LL1.29_line_1fr_01"/>
 							<address>
 								<addrLine>
@@ -424,35 +381,34 @@
 								</addrLine>
 								<lb xml:id="LL1.29_lb_1fr_02" n="2" facs="#LL1.29_line_1fr_02"/>
 									<addrLine>
-									<hi rend="align(right)">
-										<placeName ref = "#Paris">près de Paris</placeName>
-										<placeName ref="#Put">à Puteaux</placeName>
-									</hi>
+									
+									<placeName ref = "#Paris">près de Paris</placeName>
+									<placeName ref="#Put">à Puteaux</placeName>
+									
 								</addrLine>
 							</address>
 						</s>
 					</ab>
 				</div>
 				
-				<div type="letter-body" n="t_01"> 
+				<div> 
 					<salute  n="ab_02">
-							<s type = "sentence" n= "s_02a" xml:id = "s_02a">
+							<s type = "sentence" xml:id = "s_02">
 							<lb xml:id="LL1.29_lb_1fr_03" n="3" facs="#LL1.29_line_1fr_03"/>
 								Mio caro<persName ref="#PP" role="lawyer">Ponzani</persName>
-								<ptr target="#LL1_29_note1"/>
 							</s>
 					</salute>	
-					<ab type="parag" rend="first_line_indented" n="ab_03">
-						<s type = "sentence" n= "s_02b" xml:id = "s_02b">
+					<ab n="ab_03">
+						<s type = "sentence" xml:id = "s_03">
 						<lb xml:id="LL1.29_lb_1fr_04" n="4" facs="#LL1.29_line_1fr_04"/>
-							<persName ref = "#GBa">Barbò <ptr target="#LL1_29_note2"/></persName> ha dovuto scriverti
+							<persName ref = "#GBa">Barbò</persName> ha dovuto scriverti
 						<lb xml:id="LL1.29_lb_1fr_05" n="5" facs="#LL1.29_line_1fr_05"/>
-							<distinct type = "archaic">ch’io avea</distinct> ricevuto la tua lettera ed
+							<choice><orig>ch’io avea</orig><reg>che io avevo</reg></choice> ricevuto la tua lettera ed
 						<!--ANNOTAZIONE A MARGINE-->
 						<unclear unit = "2 lines" facs = "#LL1.29_line_1fr_S"></unclear>
 						<lb xml:id="LL1.29_lb_1fr_06" n="6" facs="#LL1.29_line_1fr_06"/>
 							inviato a <placeName ref = "#London">Londra</placeName> quella per 
-							<persName ref = "#SL">Levy <ptr target="#LL1_29_note3"/></persName>, ove
+							<persName ref = "#SL">Levy </persName>, ove
 						<!--SEGNO A MARGINE-->
 						<add facs = "#LL1.29_line_1fr_00"></add>
 						<lb xml:id="LL1.29_lb_1fr_07" n="7" facs="#LL1.29_line_1fr_07"/>
@@ -472,8 +428,8 @@
 						<lb xml:id="LL1.29_lb_1fr_14" n="14" facs="#LL1.29_line_1fr_14"/>
 							a <placeName ref = "#MI">Milano</placeName>.
 						</s>
-						<join target = "#s_02a #s_02b" scope = "branches" result = "s " type ="sentence"/>				
-						<s type="sentence" n="s_03">
+					
+						<s type="sentence" xml:id = "s_04">
 							<persName ref = "#SL">Levy</persName> mi dice di salutarti
 						<lb xml:id="LL1.29_lb_1fr_15" n="15" facs="#LL1.29_line_1fr_15"/>
 							cara­mente e di dirti che egli stesso
@@ -482,7 +438,7 @@
 						<lb xml:id="LL1.29_lb_1fr_17" n="17" facs="#LL1.29_line_1fr_17"/>
 							giorni.
 						</s>
-						<s type="sentence" n="s_04">
+						<s type="sentence" xml:id = "s_05">
 							– Io mi trovo in campagna
 						<lb xml:id="LL1.29_lb_1fr_18" n="18" facs="#LL1.29_line_1fr_18"/>
 							con <persName ref = "#SL">Levy</persName>, ove ci divertiamo 
@@ -498,7 +454,7 @@
 						<lb xml:id="LL1.29_lb_1fr_22" n="22" facs="#LL1.29_line_1fr_22"/>
 							nella vita monotona.
 						</s>
-						<s type = "sentence" n= "s_05a" xml:id = "s_05a">
+						<s type = "sentence" xml:id = "s_06a">
 							– Delle guerre
 						<lb xml:id="LL1.29_lb_1fr_23" n="23" facs="#LL1.29_line_1fr_23"/>
 							insorte fra i Direttori della 
@@ -515,11 +471,11 @@
 				</div>	
 			</div>
 			<!--CAMBIO PAGINA-->
-			<div type="recto-recto">
+			<div>
 				<pb n="2" xml:id="LL1.29_fol_1rr" facs="#LL1.29_folio_1rr"/>
-				<div type="letter-body" n="t_02">
-					<ab type="parag" rend="first_line_indented" n="ab_04">
-						<s type = "sentence" n= "s_05b" xml:id = "s_05b">
+				<div>
+					<ab type="parag" n="ab_04">
+						<s type = "sentence" xml:id = "s_06b">
 						<lb xml:id="LL1.29_lb_1rr_01" n="01" facs="#LL1.29_line_1rr_01"/>
 						    mio contratto non è ancora finito, ed
 						<lb xml:id="LL1.29_lb_1rr_02" n="02" facs="#LL1.29_line_1rr_02"/>
@@ -531,12 +487,12 @@
 							pianate,ed io riapplicarmi e lavorare.
 							</w>
 						</s>
-						<join target = "#s_05a #s_05b" scope = "branches" result = "s " type ="sentence"/>	
+						<join target = "#s_06a #s_06b" scope = "branches" result = "s " type ="sentence"/>	
 					</ab>			
 				</div>
 			</div>
 			<!--CAMBIO PAGINA-->
-			<div type = "recto-verso">
+			<div>
 				<pb n="3" xml:id="LL1.29_fol_1rv" facs="#LL1.29_folio_1rv"/>
 				<!-- timbro del destinatario illeggibile -->
 				<ab type="parag" n="ab_05" >
@@ -551,7 +507,7 @@
 				</ab>
 			</div>
 			<!--CAMBIO PAGINA-->
-			<div type = "fronte-verso">
+			<div>
 				<pb n="4" xml:id="LL1.29_fol_1fv" facs="#LL1.29_folio_1fv"/>
 				<ab n = "ab_06">
 					<!--ANNOTAZIONE NUMERO-->
@@ -559,35 +515,20 @@
 						<num>5</num>
 					</add>
 					<!--ANNOTAZIONE ILLEGGIBILE-->
-					<unclear unit = "4 characters" facs = "#LL1.29_line_1fv_02"></unclear>
+					<unclear facs = "#LL1.29_line_1fv_02"></unclear>
 				</ab>
 			</div>
 		</body>
 
 		<back>
-			<div type="notes">
-				<div type="ann_notes">					
-					<note xml:id="LL1_29_note1" resp="#MS">
-						<p> <!--Nota su Pietro Ponzani-->
-							<persName ref="#VB" role="composer">Bellini</persName> si riferiva all'avvocato 
-							<persName ref="#PP" role="lawyer">Pietro Ponzani</persName>.
-						</p>
-					</note>
-					<note xml:id = "LL1_29_note2" resp = "#MF">
-						<p>
-							<persName ref="#VB" role="composer">Bellini</persName> si riferiva al conte
-							<persName ref = "#GBa" role = "lord"> Giacomo Barbò</persName>.
-						</p>
-					</note>
-					<note xml:id = "LL1_29_note3" resp = "#MS">
-						<p>	
-							<persName ref="#VB" role="composer">Bellini</persName> si riferiva a
-							<persName ref = "#SL"> Levy Solomon</persName>.
-						</p>
-					</note>
-				</div>
+			<div>
+				<note xml:id="LL1_29_note1" resp="#MF">
+					<p>Non si ha la certezza che la lettera sia stata spedita poichè l'unico timbro presente è illeggibile</p>
+				</note>
 			</div>
+
 			<div type="bibliography">
+
 					<listBibl xml:id="LL1_29_bibliography">
 						
 						<bibl xml:id="LL1_29_Amore" >

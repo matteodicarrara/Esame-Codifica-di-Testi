@@ -288,7 +288,9 @@
 
         <profileDesc>
 			<correspDesc>
-				<ptr target="#LL1_29_note1"/>	
+				<correspContext>
+					<ptr target="#LL1_29_note1"/>
+				</correspContext>
 			</correspDesc>
 
 			<textClass>
